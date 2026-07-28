@@ -65,7 +65,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* CENTER: Horizontal Navigation Links */}
-            <nav className="hidden xl:flex items-center gap-1 lg:gap-1.5">
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.href && (!link.hasDropdown || location.pathname === '/services');
                 const Icon = link.icon;
@@ -79,7 +79,7 @@ export const Navbar: React.FC = () => {
                       onMouseLeave={() => setIsServicesOpen(false)}
                     >
                       <button
-                        className={`group relative flex items-center gap-1 px-3 py-1.5 rounded-full font-bold text-13px sm:text-sm transition-all duration-200 ${
+                        className={`group relative flex items-center gap-1 px-2.5 xl:px-3 py-1.5 rounded-full font-bold text-12px xl:text-sm transition-all duration-200 ${
                           isActive || isServicesOpen
                             ? 'text-[#6D3DF5]'
                             : 'text-[#170B3B] hover:text-[#6D3DF5]'
@@ -89,7 +89,7 @@ export const Navbar: React.FC = () => {
                         <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${isServicesOpen ? 'rotate-180 text-[#6D3DF5]' : 'text-gray-400 group-hover:text-[#6D3DF5]'}`} />
                         
                         {isActive && (
-                          <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#6D3DF5] rounded-full" />
+                          <span className="absolute bottom-0 left-2.5 xl:left-3 right-2.5 xl:right-3 h-0.5 bg-[#6D3DF5] rounded-full" />
                         )}
                       </button>
 
@@ -139,7 +139,7 @@ export const Navbar: React.FC = () => {
                   <Link
                     key={link.label}
                     to={link.href}
-                    className={`group relative font-bold text-13px sm:text-sm transition-all duration-200 px-3 py-1.5 flex items-center gap-1.5 ${
+                    className={`group relative font-bold text-12px xl:text-sm transition-all duration-200 px-2.5 xl:px-3 py-1.5 flex items-center gap-1.5 ${
                       isActive
                         ? 'text-[#6D3DF5]'
                         : 'text-[#170B3B] hover:text-[#6D3DF5]'
@@ -149,7 +149,7 @@ export const Navbar: React.FC = () => {
                     {Icon && <Icon className="w-3.5 h-3.5 text-gray-500 group-hover:text-[#6D3DF5] transition-colors" />}
                     
                     {isActive && (
-                      <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#6D3DF5] rounded-full" />
+                      <span className="absolute bottom-0 left-2.5 xl:left-3 right-2.5 xl:right-3 h-0.5 bg-[#6D3DF5] rounded-full" />
                     )}
                   </Link>
                 );
@@ -157,31 +157,31 @@ export const Navbar: React.FC = () => {
             </nav>
 
             {/* RIGHT: Compact Curved Purple Organic Contact Us Section Matching Reference Image */}
-            <div className="hidden xl:block h-full relative -mr-2 my-[-8px] py-0.5">
+            <div className="hidden lg:block h-full relative -mr-2 my-[-8px] py-0.5">
               <Link
                 to="/contact"
-                className="group relative flex items-center gap-2.5 px-7 sm:px-9 py-3.5 rounded-[36px_90px_36px_90px] text-sm font-black text-white bg-gradient-to-r from-[#2A0868] via-[#521EE2] to-[#7C3AED] shadow-[0_6px_25px_rgba(82,30,226,0.35)] hover:shadow-[0_10px_30px_rgba(82,30,226,0.55)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 overflow-hidden border border-white/20"
+                className="group relative flex items-center gap-2 px-5 xl:px-8 py-3.5 rounded-[36px_90px_36px_90px] text-xs xl:text-sm font-black text-white bg-gradient-to-r from-[#2A0868] via-[#521EE2] to-[#7C3AED] shadow-[0_6px_25px_rgba(82,30,226,0.35)] hover:shadow-[0_10px_30px_rgba(82,30,226,0.55)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 overflow-hidden border border-white/20"
               >
                 {/* Decorative Dots Pattern inside purple curved section */}
                 <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.2)_1px,transparent_1px)] [background-size:12px_12px] opacity-40 pointer-events-none" />
 
                 {/* Left Glowing Circle with Phone Icon */}
                 <div className="relative flex items-center justify-center z-10">
-                  <div className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shadow-inner group-hover:rotate-12 group-hover:bg-white group-hover:text-[#6D3DF5] transition-all duration-300">
-                    <Phone className="w-3.5 h-3.5 transition-colors duration-300" />
+                  <div className="w-6 h-6 xl:w-7 xl:h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shadow-inner group-hover:rotate-12 group-hover:bg-white group-hover:text-[#6D3DF5] transition-all duration-300">
+                    <Phone className="w-3 h-3 xl:w-3.5 xl:h-3.5 transition-colors duration-300" />
                   </div>
                 </div>
 
                 {/* Contact Us Label */}
-                <span className="tracking-wide relative z-10 text-sm font-extrabold drop-shadow-xs">Contact Us</span>
+                <span className="tracking-wide relative z-10 text-xs xl:text-sm font-extrabold drop-shadow-xs">Contact Us</span>
 
                 {/* Animated Arrow Icon */}
-                <ArrowRight className="w-4 h-4 text-white relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-white relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </div>
 
             {/* Mobile/Tablet Menu Toggle Button */}
-            <div className="flex xl:hidden items-center gap-3 pr-2">
+            <div className="flex lg:hidden items-center gap-3 pr-2">
               <Link
                 to="/contact"
                 className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#2A0868] via-[#521EE2] to-[#7C3AED] shadow-md hover:shadow-lg transition-all"

@@ -134,44 +134,44 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-7 relative flex justify-end items-center mt-8 lg:mt-0"
+            className="lg:col-span-7 relative flex justify-center lg:justify-end items-center mt-6 lg:mt-0 w-full"
           >
             <div className="relative w-full max-w-2xl">
               
               {/* Flowing S-Curve White & Purple Edge Mask Container */}
-              <div className="relative overflow-hidden rounded-l-[120px] rounded-r-[32px] sm:rounded-l-[180px] sm:rounded-r-[40px] shadow-[0_25px_60px_rgba(23,5,75,0.18)] bg-white p-2 border-2 border-purple-100/80">
+              <div className="relative overflow-hidden rounded-l-[60px] sm:rounded-l-[140px] lg:rounded-l-[180px] rounded-r-[24px] sm:rounded-r-[36px] shadow-[0_20px_50px_rgba(23,5,75,0.15)] bg-white p-1.5 sm:p-2 border-2 border-purple-100/80">
                 
                 {/* Hero Image */}
                 <img
                   src={teamImageUrl}
                   alt="Corporate Recruitment Team - JMS Group"
-                  className="w-full h-[360px] sm:h-[430px] lg:h-[460px] object-cover rounded-l-[110px] rounded-r-[26px] sm:rounded-l-[170px] sm:rounded-r-[32px]"
+                  className="w-full h-[260px] xs:h-[300px] sm:h-[380px] lg:h-[450px] object-cover rounded-l-[54px] sm:rounded-l-[132px] lg:rounded-l-[170px] rounded-r-[20px] sm:rounded-r-[30px]"
                 />
 
-                {/* Bottom-Right Glowing Purple Curved Ribbon Accent (Matching Reference Image Bottom Ribbon) */}
-                <div className="absolute -bottom-2 -right-2 w-72 sm:w-96 h-36 sm:h-44 bg-gradient-to-tl from-[#17054B] via-[#4C1DCE] to-[#7C3AED] rounded-tl-[100%] border-t-2 border-l-2 border-white/40 shadow-2xl overflow-hidden pointer-events-none flex items-end justify-end p-4">
+                {/* Bottom-Right Glowing Purple Curved Ribbon Accent */}
+                <div className="absolute -bottom-2 -right-2 w-48 xs:w-60 sm:w-80 lg:w-96 h-28 xs:h-32 sm:h-40 lg:h-44 bg-gradient-to-tl from-[#17054B] via-[#4C1DCE] to-[#7C3AED] rounded-tl-[100%] border-t-2 border-l-2 border-white/40 shadow-2xl overflow-hidden pointer-events-none flex items-end justify-end p-4">
                   <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.25)_1px,transparent_1px)] [background-size:10px_10px] opacity-40" />
                 </div>
 
               </div>
 
               {/* Left-Side Soft Flowing Purple Curve Ribbon (Connecting hero text towards image) */}
-              <div className="absolute -left-12 bottom-4 w-44 h-24 bg-gradient-to-r from-transparent via-[#7C3AED]/20 to-[#4C1DCE]/40 rounded-full blur-xl pointer-events-none" />
+              <div className="absolute -left-6 sm:-left-12 bottom-4 w-32 sm:w-44 h-16 sm:h-24 bg-gradient-to-r from-transparent via-[#7C3AED]/20 to-[#4C1DCE]/40 rounded-full blur-xl pointer-events-none" />
 
               {/* Floating Statistics Card - 25+ Years of Excellence */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="absolute -bottom-5 left-10 sm:left-24 bg-white/98 backdrop-blur-md px-6 py-4 rounded-3xl shadow-2xl border border-purple-100/90 flex items-center gap-4 z-30"
+                className="absolute -bottom-4 sm:-bottom-5 left-4 sm:left-16 lg:left-24 bg-white/98 backdrop-blur-md px-4 sm:px-6 py-2.5 sm:py-4 rounded-2xl sm:rounded-3xl shadow-2xl border border-purple-100/90 flex items-center gap-3 sm:gap-4 z-30"
               >
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#2A0868] via-[#521EE2] to-[#7C3AED] flex items-center justify-center text-white shadow-md shadow-purple-500/30">
-                  <Star className="w-6 h-6 fill-white text-transparent" />
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#2A0868] via-[#521EE2] to-[#7C3AED] flex items-center justify-center text-white shadow-md shadow-purple-500/30">
+                  <Star className="w-4 h-4 sm:w-6 sm:h-6 fill-white text-transparent" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-black text-[#170B3B] leading-none">25+</div>
-                  <div className="text-xs sm:text-sm text-[#5D5A75] font-semibold mt-1">Years of Excellence</div>
-                  <div className="w-8 h-1 bg-[#521EE2] rounded-full mt-1.5" />
+                  <div className="text-xl sm:text-3xl font-black text-[#170B3B] leading-none">25+</div>
+                  <div className="text-[10px] sm:text-sm text-[#5D5A75] font-semibold mt-0.5 sm:mt-1">Years of Excellence</div>
+                  <div className="w-6 sm:w-8 h-0.5 sm:h-1 bg-[#521EE2] rounded-full mt-1" />
                 </div>
               </motion.div>
 
