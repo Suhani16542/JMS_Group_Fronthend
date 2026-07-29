@@ -41,14 +41,14 @@ export const ServicesSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F4F0FF] text-[#6D3DF5] text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
             OUR PROFESSIONAL SERVICES
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#17152B] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#9E3371] tracking-tight">
             Complete HR & Career Solutions <br />
-            <span className="text-gradient">For People & Businesses</span>
+            <span className="text-[#9E3371]">For People & Businesses</span>
           </h2>
-          <p className="text-[#6B6B7A] mt-4 text-base">
+          <p className="text-[#9E3371] mt-4 text-base">
             Complete HR and career solutions designed to empower job seekers and accelerate corporate growth.
           </p>
         </div>
@@ -64,24 +64,24 @@ export const ServicesSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-white rounded-3xl p-8 border border-purple-100/80 shadow-sm hover:shadow-2xl hover:border-[#6D3DF5]/30 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                className="group relative bg-white rounded-3xl p-8 border border-[#9E3371] shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
               >
-                {/* Top Subtle Hover Accent */}
-                <div className="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-[#6D3DF5] to-[#8B5CF6] rounded-t-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Top Hover Accent */}
+                <div className="absolute top-0 left-8 right-8 h-1 bg-[#9E3371] rounded-t-full opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <div>
                   {/* Icon Container */}
-                  <div className="w-14 h-14 rounded-2xl bg-[#F4F0FF] text-[#6D3DF5] group-hover:bg-purple-gradient group-hover:text-white flex items-center justify-center transition-colors duration-300 mb-6 shadow-sm">
-                    <IconComponent className="w-7 h-7" />
+                  <div className="w-14 h-14 rounded-2xl bg-[#9E3371] text-white flex items-center justify-center transition-colors duration-300 mb-6 shadow-sm">
+                    <IconComponent className="w-7 h-7 text-white" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-[#17152B] mb-3 group-hover:text-[#6D3DF5] transition-colors">
+                  <h3 className="text-xl font-bold text-[#9E3371] mb-3 transition-colors">
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-[#6B6B7A] leading-relaxed mb-6">
+                  <p className="text-sm text-[#9E3371] leading-relaxed mb-6">
                     {service.description}
                   </p>
                 </div>
@@ -89,7 +89,7 @@ export const ServicesSection: React.FC = () => {
                 {/* Learn More Link */}
                 <Link
                   to={service.link}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#6D3DF5] group-hover:text-[#5B2EE2] transition-colors pt-4 border-t border-purple-50"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#9E3371] hover:underline transition-colors pt-4 border-t border-[#9E3371]"
                 >
                   <span>Learn More</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
@@ -105,3 +105,4 @@ export const ServicesSection: React.FC = () => {
 };
 
 export default ServicesSection;
+

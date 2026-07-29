@@ -32,7 +32,7 @@ export const HrConsultingPage: React.FC = () => {
   return (
     <div className="w-full bg-white">
       {/* Hero Banner */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-b from-[#FAF9FF] via-[#FCFBFF] to-white overflow-hidden">
+      <section className="relative py-16 lg:py-24 bg-white border-b border-[#9E3371] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -42,25 +42,25 @@ export const HrConsultingPage: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="lg:col-span-7 flex flex-col items-start"
             >
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAFF] text-[#6D3DF5] text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
-                <Sparkles className="w-3.5 h-3.5 text-[#6D3DF5]" />
-                HR CONSULTING
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
+                <Sparkles className="w-3.5 h-3.5 text-white" />
+                <span>HR CONSULTING</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-black text-[#170B3B] leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl font-black text-[#9E3371] leading-tight mb-6">
                 Strategic HR Solutions for <br />
-                <span className="bg-gradient-to-r from-[#4C1D95] via-[#6D3DF5] to-[#7C3AED] bg-clip-text text-transparent">
+                <span className="text-[#9E3371]">
                   Sustainable Business Growth
                 </span>
               </h1>
-              <p className="text-base sm:text-lg text-[#5D5A75] leading-relaxed mb-8">
+              <p className="text-base sm:text-lg text-[#9E3371] leading-relaxed mb-8">
                 JMS Group empowers corporate leaders to optimize workforce architecture, build high-retention workplace cultures, and ensure 100% HR regulatory compliance.
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#4C1D95] via-[#6D3DF5] to-[#7C3AED] shadow-lg shadow-purple-500/25 hover:scale-[1.02] transition-all"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-sm font-bold text-white bg-[#9E3371] border border-white shadow-lg hover:bg-[#862B5F] transition-all"
               >
                 <span>Talk To Our HR Experts</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </Link>
             </motion.div>
 
@@ -70,7 +70,7 @@ export const HrConsultingPage: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5 relative"
             >
-              <div className="rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
+              <div className="rounded-3xl overflow-hidden border-4 border-[#9E3371] shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=900&auto=format&fit=crop"
                   alt="JMS HR Consulting Strategy Meeting"
@@ -87,21 +87,21 @@ export const HrConsultingPage: React.FC = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-extrabold text-[#170B3B] mb-4">Our HR Consulting Solutions</h2>
-            <p className="text-sm sm:text-base text-[#5D5A75]">
+            <h2 className="text-3xl font-extrabold text-[#9E3371] mb-4">Our HR Consulting Solutions</h2>
+            <p className="text-sm sm:text-base text-[#9E3371]">
               Tailored advisory services designed to transform HR departments into strategic growth drivers.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {solutions.map((sol) => (
-              <div key={sol.title} className="p-8 rounded-3xl bg-[#FAF9FF] border border-purple-100/90 shadow-sm flex flex-col justify-between">
+              <div key={sol.title} className="p-8 rounded-3xl bg-white border border-[#9E3371] shadow-sm flex flex-col justify-between">
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-white text-[#6D3DF5] shadow-xs flex items-center justify-center mb-6">
-                    <Users className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-2xl bg-[#9E3371] text-white shadow-xs flex items-center justify-center mb-6">
+                    <Users className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#170B3B] mb-3">{sol.title}</h3>
-                  <p className="text-xs text-[#5D5A75] leading-relaxed mb-6">{sol.desc}</p>
+                  <h3 className="text-xl font-bold text-[#9E3371] mb-3">{sol.title}</h3>
+                  <p className="text-xs text-[#9E3371] leading-relaxed mb-6">{sol.desc}</p>
                 </div>
               </div>
             ))}
@@ -110,17 +110,17 @@ export const HrConsultingPage: React.FC = () => {
       </section>
 
       {/* FAQ Accordion Section */}
-      <section className="py-16 bg-[#FAF9FF]">
+      <section className="py-16 bg-white border-t border-[#9E3371]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-extrabold text-[#170B3B]">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-extrabold text-[#9E3371]">Frequently Asked Questions</h2>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <div key={faq.q} className="p-6 rounded-3xl bg-white border border-purple-100/80 shadow-sm">
-                <h4 className="text-base font-bold text-[#170B3B] mb-2">{faq.q}</h4>
-                <p className="text-xs text-[#5D5A75] leading-relaxed">{faq.a}</p>
+              <div key={faq.q} className="p-6 rounded-3xl bg-white border border-[#9E3371] shadow-sm">
+                <h4 className="text-base font-bold text-[#9E3371] mb-2">{faq.q}</h4>
+                <p className="text-xs text-[#9E3371] leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -128,16 +128,16 @@ export const HrConsultingPage: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-[#4C1D95] via-[#6D3DF5] to-[#7C3AED] text-white">
+      <section className="py-16 bg-[#9E3371] text-white border-t border-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-black mb-4">Optimize Your HR Operations Today</h2>
-          <p className="text-purple-100 mb-8 text-sm sm:text-base">Schedule a confidential consultation with senior JMS Group HR advisors.</p>
+          <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Optimize Your HR Operations Today</h2>
+          <p className="text-white mb-8 text-sm sm:text-base">Schedule a confidential consultation with senior JMS Group HR advisors.</p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#6D3DF5] font-bold text-sm shadow-xl hover:bg-[#FAF9FF] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#9E3371] font-bold text-sm shadow-xl hover:bg-[#862B5F] hover:text-white transition-all"
           >
             <span>Book HR Consultation</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-[#9E3371]" />
           </Link>
         </div>
       </section>
@@ -146,3 +146,4 @@ export const HrConsultingPage: React.FC = () => {
 };
 
 export default HrConsultingPage;
+

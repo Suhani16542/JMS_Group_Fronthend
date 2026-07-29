@@ -60,13 +60,13 @@ export const BlogPage: React.FC = () => {
   return (
     <div className="w-full bg-white pb-16">
       {/* Hero */}
-      <section className="py-16 lg:py-20 bg-gradient-to-b from-[#FAF9FF] via-[#FCFBFF] to-white border-b border-purple-100">
+      <section className="py-16 lg:py-20 bg-white border-b border-[#9E3371]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAFF] text-[#6D3DF5] text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
             CAREER & HR INSIGHTS
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-[#170B3B] mb-4">JMS Group Blog & Insights</h1>
-          <p className="text-base text-[#5D5A75] max-w-2xl mx-auto leading-relaxed">
+          <h1 className="text-4xl sm:text-5xl font-black text-[#9E3371] mb-4">JMS Group Blog & Insights</h1>
+          <p className="text-base text-[#9E3371] max-w-2xl mx-auto leading-relaxed">
             Expert articles on HR consulting, recruitment trends, resume building, interview strategies, and career development.
           </p>
         </div>
@@ -74,45 +74,45 @@ export const BlogPage: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Featured Article Card */}
-        <div className="mb-14 rounded-3xl overflow-hidden bg-[#FAF9FF] border border-purple-100/90 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 lg:p-8">
-          <div className="lg:col-span-7 rounded-2xl overflow-hidden h-72 lg:h-96">
+        <div className="mb-14 rounded-3xl overflow-hidden bg-white border border-[#9E3371] shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 lg:p-8">
+          <div className="lg:col-span-7 rounded-2xl overflow-hidden h-72 lg:h-96 border border-[#9E3371]">
             <img src={featuredArticle.image} alt={featuredArticle.title} className="w-full h-full object-cover" />
           </div>
           <div className="lg:col-span-5 flex flex-col items-start">
-            <span className="px-3 py-1 rounded-full bg-[#EFEAFF] text-[#6D3DF5] text-xs font-bold mb-3">{featuredArticle.category}</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#170B3B] mb-3 leading-snug">{featuredArticle.title}</h2>
-            <p className="text-xs sm:text-sm text-[#5D5A75] leading-relaxed mb-6">{featuredArticle.excerpt}</p>
-            <div className="flex items-center gap-4 text-xs text-[#5D5A75] font-semibold mb-6">
+            <span className="px-3 py-1 rounded-full bg-[#9E3371] text-white text-xs font-bold mb-3 border border-white">{featuredArticle.category}</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#9E3371] mb-3 leading-snug">{featuredArticle.title}</h2>
+            <p className="text-xs sm:text-sm text-[#9E3371] leading-relaxed mb-6">{featuredArticle.excerpt}</p>
+            <div className="flex items-center gap-4 text-xs text-[#9E3371] font-semibold mb-6">
               <span>{featuredArticle.author}</span>
               <span>•</span>
               <span>{featuredArticle.date}</span>
             </div>
-            <Link to="/contact" className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#6D3DF5]">
+            <Link to="/contact" className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#9E3371] hover:underline">
               <span>Read Full Article</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#9E3371]" />
             </Link>
           </div>
         </div>
 
         {/* Article Grid */}
-        <h3 className="text-2xl font-extrabold text-[#170B3B] mb-8">Latest Articles & Guides</h3>
+        <h3 className="text-2xl font-extrabold text-[#9E3371] mb-8">Latest Articles & Guides</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {articles.map((art) => (
-            <div key={art.id} className="bg-white rounded-3xl overflow-hidden border border-purple-100/90 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+            <div key={art.id} className="bg-white rounded-3xl overflow-hidden border border-[#9E3371] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
               <div>
                 <div className="h-48 overflow-hidden">
                   <img src={art.image} alt={art.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
-                  <span className="px-2.5 py-1 rounded-md bg-[#EFEAFF] text-[#6D3DF5] text-[11px] font-bold inline-block mb-3">{art.category}</span>
-                  <h4 className="text-base font-bold text-[#170B3B] mb-2 leading-snug">{art.title}</h4>
-                  <p className="text-xs text-[#5D5A75] leading-relaxed mb-4">{art.excerpt}</p>
+                  <span className="px-2.5 py-1 rounded-md bg-[#9E3371] text-white text-[11px] font-bold inline-block mb-3 border border-white">{art.category}</span>
+                  <h4 className="text-base font-bold text-[#9E3371] mb-2 leading-snug">{art.title}</h4>
+                  <p className="text-xs text-[#9E3371] leading-relaxed mb-4">{art.excerpt}</p>
                 </div>
               </div>
               <div className="p-6 pt-0">
-                <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#6D3DF5]">
+                <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#9E3371] hover:underline">
                   <span>Read Article</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#9E3371]" />
                 </Link>
               </div>
             </div>
@@ -124,3 +124,4 @@ export const BlogPage: React.FC = () => {
 };
 
 export default BlogPage;
+

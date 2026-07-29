@@ -36,13 +36,13 @@ export const TestimonialsSection: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F4F0FF] text-[#6D3DF5] text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
             CLIENT & CANDIDATE REVIEWS
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#17152B] tracking-tight">
-            What Our Clients & <span className="text-gradient">Candidates Say</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#9E3371] tracking-tight">
+            What Our Clients & <span className="text-[#9E3371]">Candidates Say</span>
           </h2>
-          <p className="text-[#6B6B7A] mt-4 text-sm sm:text-base">
+          <p className="text-[#9E3371] mt-4 text-sm sm:text-base">
             Trusted by corporate leaders and ambitious professionals across industries.
           </p>
         </div>
@@ -56,37 +56,37 @@ export const TestimonialsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-[#FAF9FF] rounded-3xl p-8 border border-purple-100/80 shadow-sm hover:shadow-xl hover:bg-white transition-all duration-300 relative flex flex-col justify-between"
+              className="bg-white rounded-3xl p-8 border border-[#9E3371] shadow-sm hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between"
             >
               {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-purple-200">
+              <div className="absolute top-6 right-6 text-[#9E3371]/40">
                 <Quote className="w-10 h-10 stroke-[1.5]" />
               </div>
 
               <div>
                 {/* Rating */}
-                <div className="flex items-center gap-1 text-amber-400 mb-4">
+                <div className="flex items-center gap-1 text-[#9E3371] mb-4">
                   {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400" />
+                    <Star key={i} className="w-4 h-4 fill-[#9E3371] text-[#9E3371]" />
                   ))}
                 </div>
 
                 {/* Quote text */}
-                <p className="text-sm text-[#17152B] leading-relaxed italic mb-8 relative z-10">
+                <p className="text-sm text-[#9E3371] leading-relaxed italic mb-8 relative z-10">
                   "{item.quote}"
                 </p>
               </div>
 
               {/* User details */}
-              <div className="flex items-center gap-4 pt-4 border-t border-purple-100">
+              <div className="flex items-center gap-4 pt-4 border-t border-[#9E3371]">
                 <img 
                   src={item.avatar} 
                   alt={item.name} 
-                  className="w-12 h-12 rounded-full object-cover ring-2 ring-[#6D3DF5]/30"
+                  className="w-12 h-12 rounded-full object-cover ring-2 ring-[#9E3371]"
                 />
                 <div>
-                  <h4 className="text-sm font-bold text-[#17152B]">{item.name}</h4>
-                  <p className="text-xs text-[#6B6B7A]">{item.role}</p>
+                  <h4 className="text-sm font-bold text-[#9E3371]">{item.name}</h4>
+                  <p className="text-xs text-[#9E3371]">{item.role}</p>
                 </div>
               </div>
 
@@ -100,3 +100,4 @@ export const TestimonialsSection: React.FC = () => {
 };
 
 export default TestimonialsSection;
+

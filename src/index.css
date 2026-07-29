@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-jms-primary: #6D3DF5;
-  --color-jms-primary-hover: #5B2EE2;
-  --color-jms-deep: #2A1768;
-  --color-jms-footer: #161131;
-  --color-jms-violet: #8B5CF6;
-  --color-jms-lavender: #F4F0FF;
-  --color-jms-dark: #17152B;
-  --color-jms-muted: #6B6B7A;
-  --color-jms-border: #E6E4F0;
+  --color-jms-primary: #9E3371;
+  --color-jms-primary-hover: #862B5F;
+  --color-jms-deep: #9E3371;
+  --color-jms-footer: #9E3371;
+  --color-jms-violet: #9E3371;
+  --color-jms-lavender: #FFFFFF;
+  --color-jms-dark: #9E3371;
+  --color-jms-muted: #9E3371;
+  --color-jms-border: #9E3371;
 }
 
 @layer base {
@@ -32,7 +32,7 @@
   
   body {
     background-color: #ffffff;
-    color: #17152B;
+    color: #9E3371;
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
@@ -50,31 +50,29 @@
   }
 }
 
-/* Custom Utilities */
+/* Custom Utilities - Strict 2-Color Theme (#9E3371 & #FFFFFF) */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
+  border: 1px solid #9E3371;
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #4C1D95 0%, #6D3DF5 50%, #7C3AED 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #9E3371;
 }
 
 .bg-purple-gradient {
-  background: linear-gradient(135deg, #5B21B6 0%, #7C3AED 50%, #8B5CF6 100%);
-  background-size: 200% 200%;
+  background: #9E3371;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bg-purple-gradient:hover {
-  background-position: right center;
-  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.45);
+  background: #862B5F;
+  box-shadow: 0 10px 25px -5px rgba(158, 51, 113, 0.45);
 }
 
 .bg-hero-gradient {
-  background: radial-gradient(circle at 80% 20%, rgba(244, 240, 255, 0.8) 0%, rgba(255, 255, 255, 1) 70%);
+  background: #FFFFFF;
 }
 
 /* Micro-interaction Helper Classes */
@@ -84,7 +82,7 @@
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px -5px rgba(109, 61, 245, 0.15);
+  box-shadow: 0 14px 30px -5px rgba(158, 51, 113, 0.2);
 }
 
 .hover-shimmer {
@@ -102,7 +100,7 @@
   background: linear-gradient(
     60deg,
     transparent 30%,
-    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.3) 50%,
     transparent 70%
   );
   transform: rotate(30deg) translateX(-100%);
@@ -112,3 +110,4 @@
 .hover-shimmer:hover::after {
   transform: rotate(30deg) translateX(100%);
 }
+

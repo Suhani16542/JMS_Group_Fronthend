@@ -7,7 +7,7 @@ import ScrollToTop from '@/components/common/ScrollToTop';
 
 export const MainLayout: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#17152B]">
+    <div className="min-h-screen flex flex-col bg-white text-[#9E3371]">
       <ScrollToTop />
       {/* Sticky Header Group: Fixed TopBar + Navbar together */}
       <header className="sticky top-0 z-50 w-full shadow-lg">
@@ -23,3 +23,4 @@ export const MainLayout: React.FC = () => {
 };
 
 export default MainLayout;
+

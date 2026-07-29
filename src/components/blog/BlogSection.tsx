@@ -32,25 +32,25 @@ export const BlogSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#FAF9FF] relative">
+    <section className="py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F4F0FF] text-[#6D3DF5] text-xs font-bold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
               INSIGHTS & NEWS
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#17152B] tracking-tight">
-              Latest From <span className="text-gradient">JMS Group</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#9E3371] tracking-tight">
+              Latest From <span className="text-[#9E3371]">JMS Group</span>
             </h2>
           </div>
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#6D3DF5] hover:text-[#5B2EE2] transition-colors mt-4 md:mt-0"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#9E3371] hover:underline transition-colors mt-4 md:mt-0"
           >
             <span>View All Articles</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-[#9E3371]" />
           </Link>
         </div>
 
@@ -63,7 +63,7 @@ export const BlogSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-3xl overflow-hidden border border-purple-100/80 shadow-sm hover:shadow-xl hover:border-[#6D3DF5]/30 transition-all duration-300 group flex flex-col justify-between"
+              className="bg-white rounded-3xl overflow-hidden border border-[#9E3371] shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
                 {/* Image */}
@@ -74,7 +74,7 @@ export const BlogSection: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-[#6D3DF5] text-white text-[11px] font-bold shadow-sm">
+                    <span className="px-3 py-1 rounded-full bg-[#9E3371] text-white text-[11px] font-bold shadow-sm border border-white">
                       {post.category}
                     </span>
                   </div>
@@ -82,16 +82,16 @@ export const BlogSection: React.FC = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <div className="flex items-center gap-2 text-xs text-[#6B6B7A] mb-3">
-                    <Calendar className="w-3.5 h-3.5 text-[#6D3DF5]" />
+                  <div className="flex items-center gap-2 text-xs text-[#9E3371] mb-3">
+                    <Calendar className="w-3.5 h-3.5 text-[#9E3371]" />
                     <span>{post.date}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#17152B] group-hover:text-[#6D3DF5] transition-colors leading-snug mb-3">
+                  <h3 className="text-lg font-bold text-[#9E3371] leading-snug mb-3">
                     {post.title}
                   </h3>
 
-                  <p className="text-xs text-[#6B6B7A] leading-relaxed">
+                  <p className="text-xs text-[#9E3371] leading-relaxed">
                     {post.description}
                   </p>
                 </div>
@@ -101,7 +101,7 @@ export const BlogSection: React.FC = () => {
               <div className="px-6 pb-6 pt-2">
                 <Link
                   to="/blog"
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#6D3DF5] group-hover:text-[#5B2EE2] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#9E3371] hover:underline transition-colors"
                 >
                   <span>Read More</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -118,3 +118,4 @@ export const BlogSection: React.FC = () => {
 };
 
 export default BlogSection;
+

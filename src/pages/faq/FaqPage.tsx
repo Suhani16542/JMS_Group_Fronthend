@@ -31,29 +31,29 @@ export const FaqPage: React.FC = () => {
   return (
     <div className="w-full bg-white pb-16">
       {/* Hero Banner */}
-      <section className="py-16 lg:py-20 bg-gradient-to-b from-[#FAF9FF] via-[#FCFBFF] to-white">
+      <section className="py-16 lg:py-20 bg-white border-b border-[#9E3371]">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAFF] text-[#6D3DF5] text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
             HELP CENTER & FAQS
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-[#170B3B] mb-4">Frequently Asked Questions</h1>
-          <p className="text-base text-[#5D5A75] max-w-2xl mx-auto leading-relaxed">
+          <h1 className="text-4xl sm:text-5xl font-black text-[#9E3371] mb-4">Frequently Asked Questions</h1>
+          <p className="text-base text-[#9E3371] max-w-2xl mx-auto leading-relaxed">
             Find answers to common questions about JMS Group placement services, HR consulting, resume submission, and career guidance.
           </p>
         </div>
       </section>
 
       {/* Category Pills */}
-      <section className="max-w-4xl mx-auto px-4 mb-8">
+      <section className="max-w-4xl mx-auto px-4 my-8">
         <div className="flex flex-wrap items-center justify-center gap-2">
           {faqCategories.map((cat) => (
             <button
               key={cat}
               onClick={() => { setActiveCategory(cat); setOpenIndex(0); }}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all border border-[#9E3371] cursor-pointer ${
                 activeCategory === cat
-                  ? 'bg-gradient-to-r from-[#4C1D95] via-[#6D3DF5] to-[#7C3AED] text-white shadow-md'
-                  : 'bg-[#FAF9FF] text-[#5D5A75] hover:bg-purple-100 hover:text-[#6D3DF5]'
+                  ? 'bg-[#9E3371] text-white shadow-md'
+                  : 'bg-white text-[#9E3371] hover:bg-[#9E3371] hover:text-white'
               }`}
             >
               {cat}
@@ -66,19 +66,23 @@ export const FaqPage: React.FC = () => {
       <section className="max-w-4xl mx-auto px-4 py-4">
         <div className="space-y-4">
           {filteredFaqs.map((faq, idx) => (
-            <div key={faq.q} className="border border-purple-100/90 rounded-2xl overflow-hidden bg-[#FAF9FF] shadow-xs">
+            <div key={faq.q} className="border border-[#9E3371] rounded-2xl overflow-hidden bg-white shadow-xs">
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full p-5 text-left font-bold text-[#170B3B] flex items-center justify-between gap-4 hover:bg-purple-50/50 transition-colors"
+                className={`w-full p-5 text-left font-bold flex items-center justify-between gap-4 transition-colors cursor-pointer ${
+                  openIndex === idx ? 'bg-[#9E3371] text-white' : 'text-[#9E3371] bg-white hover:bg-[#9E3371]/5'
+                }`}
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-xs px-2.5 py-1 rounded-md bg-[#EFEAFF] text-[#6D3DF5] font-bold">{faq.category}</span>
+                  <span className={`text-xs px-2.5 py-1 rounded-md font-bold border ${openIndex === idx ? 'bg-white text-[#9E3371] border-white' : 'bg-[#9E3371] text-white border-white'}`}>
+                    {faq.category}
+                  </span>
                   <span className="text-sm sm:text-base">{faq.q}</span>
                 </div>
-                <ChevronDown className={`w-5 h-5 text-[#6D3DF5] flex-shrink-0 transition-transform ${openIndex === idx ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-5 h-5 flex-shrink-0 transition-transform ${openIndex === idx ? 'rotate-180 text-white' : 'text-[#9E3371]'}`} />
               </button>
               {openIndex === idx && (
-                <div className="p-5 pt-3 text-xs sm:text-sm text-[#5D5A75] leading-relaxed border-t border-purple-50 bg-white">
+                <div className="p-5 pt-4 text-xs sm:text-sm text-[#9E3371] leading-relaxed border-t border-[#9E3371] bg-white">
                   {faq.a}
                 </div>
               )}
@@ -89,12 +93,12 @@ export const FaqPage: React.FC = () => {
 
       {/* CTA Banner */}
       <section className="mt-16 max-w-4xl mx-auto px-4">
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#4C1D95] via-[#6D3DF5] to-[#7C3AED] text-white text-center shadow-xl">
-          <h3 className="text-2xl sm:text-3xl font-extrabold mb-2">Still Have Questions?</h3>
-          <p className="text-xs sm:text-sm text-purple-100 mb-6">Our recruitment and HR advisory team is available to assist you.</p>
+        <div className="p-8 sm:p-10 rounded-3xl bg-[#9E3371] text-white text-center shadow-xl border border-white">
+          <h3 className="text-2xl sm:text-3xl font-extrabold mb-2 text-white">Still Have Questions?</h3>
+          <p className="text-xs sm:text-sm text-white mb-6">Our recruitment and HR advisory team is available to assist you.</p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#6D3DF5] font-bold text-xs sm:text-sm shadow-md hover:bg-[#FAF9FF] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#9E3371] font-bold text-xs sm:text-sm shadow-md hover:bg-[#862B5F] hover:text-white transition-all border border-white"
           >
             Contact Our Advisory Team
           </Link>
@@ -105,3 +109,4 @@ export const FaqPage: React.FC = () => {
 };
 
 export default FaqPage;
+

@@ -11,13 +11,9 @@ export const CountersSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-purple-gradient text-white relative overflow-hidden">
-      {/* Background Decorative Glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-black/10 rounded-full blur-3xl" />
-
+    <section className="py-16 bg-[#9E3371] text-white relative overflow-hidden border-t border-b border-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-white/15">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-white/30">
           {stats.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -29,13 +25,13 @@ export const CountersSection: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex flex-col items-center p-4 pt-8 sm:pt-4"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center mb-4 text-white">
-                  <Icon className="w-6 h-6" />
+                <div className="w-12 h-12 rounded-2xl bg-white text-[#9E3371] flex items-center justify-center mb-4 shadow-md">
+                  <Icon className="w-6 h-6 text-[#9E3371]" />
                 </div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-2">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-2 text-white">
                   {item.count}
                 </div>
-                <div className="text-xs sm:text-sm text-purple-100 font-medium tracking-wide uppercase">
+                <div className="text-xs sm:text-sm text-white font-medium tracking-wide uppercase">
                   {item.label}
                 </div>
               </motion.div>
@@ -48,3 +44,4 @@ export const CountersSection: React.FC = () => {
 };
 
 export default CountersSection;
+

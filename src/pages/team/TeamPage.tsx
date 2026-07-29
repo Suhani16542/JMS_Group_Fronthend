@@ -34,15 +34,15 @@ export const TeamPage: React.FC = () => {
   return (
     <div className="w-full bg-white">
       {/* Hero Banner */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-b from-[#FAF9FF] via-[#FCFBFF] to-white overflow-hidden">
+      <section className="relative py-16 lg:py-24 bg-white border-b border-[#9E3371] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAFF] text-[#6D3DF5] text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
             MEET OUR TEAM
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-[#170B3B] mb-4">
-            The Experts Behind <span className="bg-gradient-to-r from-[#4C1D95] via-[#6D3DF5] to-[#7C3AED] bg-clip-text text-transparent">JMS Group</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-[#9E3371] mb-4">
+            The Experts Behind <span className="text-[#9E3371]">JMS Group</span>
           </h1>
-          <p className="text-base text-[#5D5A75] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base text-[#9E3371] max-w-2xl mx-auto leading-relaxed">
             Our team of seasoned HR directors, executive headhunters, and career guidance specialists are dedicated to driving organizational excellence and candidate success.
           </p>
         </div>
@@ -52,26 +52,26 @@ export const TeamPage: React.FC = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-3xl font-extrabold text-[#170B3B]">Leadership & Senior Consultants</h2>
+            <h2 className="text-3xl font-extrabold text-[#9E3371]">Leadership & Senior Consultants</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {leadership.map((member) => (
-              <div key={member.name} className="bg-[#FAF9FF] rounded-3xl overflow-hidden border border-purple-100/90 shadow-sm hover:shadow-xl hover:border-[#6D3DF5]/30 transition-all flex flex-col justify-between group">
+              <div key={member.name} className="bg-white rounded-3xl overflow-hidden border border-[#9E3371] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group">
                 <div>
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden border-b border-[#9E3371]">
                     <img
                       src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#170B3B]/80 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-[#9E3371]/20" />
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-lg font-bold text-[#170B3B] mb-1">{member.name}</h3>
-                    <p className="text-xs font-semibold text-[#6D3DF5] mb-3">{member.role}</p>
-                    <p className="text-xs text-[#5D5A75] leading-relaxed">{member.bio}</p>
+                    <h3 className="text-lg font-bold text-[#9E3371] mb-1">{member.name}</h3>
+                    <p className="text-xs font-semibold text-[#9E3371] mb-3">{member.role}</p>
+                    <p className="text-xs text-[#9E3371] leading-relaxed">{member.bio}</p>
                   </div>
                 </div>
               </div>
@@ -84,3 +84,4 @@ export const TeamPage: React.FC = () => {
 };
 
 export default TeamPage;
+

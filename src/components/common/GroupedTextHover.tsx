@@ -12,7 +12,6 @@ export const GroupedTextHover: React.FC<GroupedTextHoverProps> = ({
   lines,
   className = '',
   lineClassName = '',
-  highlightGradient = false,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -27,18 +26,14 @@ export const GroupedTextHover: React.FC<GroupedTextHoverProps> = ({
           key={index}
           animate={{
             y: isHovered ? -3 : 0,
-            color: isHovered ? '#6D3DF5' : undefined,
+            color: '#9E3371',
           }}
           transition={{
             duration: 0.35,
             delay: isHovered ? index * 0.08 : (lines.length - 1 - index) * 0.05,
             ease: [0.34, 1.56, 0.64, 1],
           }}
-          className={`${lineClassName} ${
-            highlightGradient && isHovered
-              ? 'bg-gradient-to-r from-[#4C1D95] via-[#6D3DF5] to-[#7C3AED] bg-clip-text text-transparent'
-              : ''
-          } transition-colors duration-300`}
+          className={`${lineClassName} transition-colors duration-300`}
         >
           {line}
         </motion.span>
@@ -48,3 +43,4 @@ export const GroupedTextHover: React.FC<GroupedTextHoverProps> = ({
 };
 
 export default GroupedTextHover;
+

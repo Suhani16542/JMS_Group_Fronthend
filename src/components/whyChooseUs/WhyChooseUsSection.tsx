@@ -27,27 +27,27 @@ export const WhyChooseUsSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6 flex flex-col items-start"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F4F0FF] text-[#6D3DF5] text-xs font-bold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
               WHY CHOOSE JMS GROUP
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#17152B] tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#9E3371] tracking-tight mb-6">
               We Bring The Right People <br />
-              <span className="text-gradient">Together</span>
+              <span className="text-[#9E3371]">Together</span>
             </h2>
 
-            <p className="text-base text-[#6B6B7A] leading-relaxed mb-8">
+            <p className="text-base text-[#9E3371] leading-relaxed mb-8">
               We combine deep industry insights, advanced candidate screening, and personalized counseling to deliver recruitment outcomes that accelerate organizational success.
             </p>
 
             {/* Feature List (2 columns on sm) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
               {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3 p-3 rounded-xl bg-[#FAF9FF] border border-purple-50">
-                  <div className="w-7 h-7 rounded-lg bg-[#6D3DF5] text-white flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4" />
+                <div key={feature} className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#9E3371]">
+                  <div className="w-7 h-7 rounded-lg bg-[#9E3371] text-white flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-sm font-semibold text-[#17152B]">{feature}</span>
+                  <span className="text-sm font-semibold text-[#9E3371]">{feature}</span>
                 </div>
               ))}
             </div>
@@ -62,25 +62,25 @@ export const WhyChooseUsSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#9E3371] group">
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop" 
                 alt="JMS Group Hiring Process Video Preview" 
                 className="w-full h-[360px] sm:h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
               
-              {/* Dark Deep Purple Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2A1768]/90 via-[#2A1768]/40 to-transparent flex flex-col justify-between p-8 text-white">
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-[#9E3371]/80 flex flex-col justify-between p-8 text-white">
                 <div className="self-end">
-                  <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold uppercase tracking-wider">
+                  <span className="px-3 py-1 rounded-full bg-white text-[#9E3371] text-xs font-semibold uppercase tracking-wider">
                     Corporate Story
                   </span>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
-                    <h3 className="text-xl font-bold">Watch Our Story</h3>
-                    <p className="text-xs text-purple-200 mt-1 max-w-xs">
+                    <h3 className="text-xl font-bold text-white">Watch Our Story</h3>
+                    <p className="text-xs text-white/90 mt-1 max-w-xs">
                       How We Help People & Businesses Grow Together
                     </p>
                   </div>
@@ -88,10 +88,10 @@ export const WhyChooseUsSection: React.FC = () => {
                   {/* Play Button */}
                   <button
                     onClick={() => setIsVideoOpen(true)}
-                    className="w-16 h-16 rounded-full bg-white text-[#6D3DF5] flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-[#F4F0FF] transition-all flex-shrink-0"
+                    className="w-16 h-16 rounded-full bg-white text-[#9E3371] flex items-center justify-center shadow-2xl hover:scale-110 transition-all flex-shrink-0"
                     aria-label="Play video"
                   >
-                    <Play className="w-7 h-7 fill-[#6D3DF5] ml-1" />
+                    <Play className="w-7 h-7 fill-[#9E3371] ml-1 text-[#9E3371]" />
                   </button>
                 </div>
               </div>
@@ -101,21 +101,21 @@ export const WhyChooseUsSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Video Modal Placeholder */}
+      {/* Video Modal */}
       {isVideoOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
+        <div className="fixed inset-0 z-50 bg-[#9E3371]/90 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="relative w-full max-w-4xl bg-white rounded-2xl overflow-hidden shadow-2xl border-2 border-[#9E3371]">
             <button 
               onClick={() => setIsVideoOpen(false)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/40"
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-[#9E3371] text-white flex items-center justify-center hover:bg-[#862B5F]"
             >
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 text-white" />
             </button>
-            <div className="aspect-video w-full flex items-center justify-center text-white text-center p-8 bg-[#161131]">
+            <div className="aspect-video w-full flex items-center justify-center text-[#9E3371] text-center p-8 bg-white">
               <div>
-                <Play className="w-16 h-16 text-[#6D3DF5] mx-auto mb-4 animate-bounce" />
-                <h4 className="text-xl font-bold">JMS Group Overview Video</h4>
-                <p className="text-sm text-gray-400 mt-2">Video player ready for deployment.</p>
+                <Play className="w-16 h-16 text-[#9E3371] fill-[#9E3371] mx-auto mb-4 animate-bounce" />
+                <h4 className="text-xl font-bold text-[#9E3371]">JMS Group Overview Video</h4>
+                <p className="text-sm text-[#9E3371] mt-2">Video player ready for deployment.</p>
               </div>
             </div>
           </div>
@@ -126,3 +126,4 @@ export const WhyChooseUsSection: React.FC = () => {
 };
 
 export default WhyChooseUsSection;
+

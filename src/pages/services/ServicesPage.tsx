@@ -83,18 +83,18 @@ export const ServicesPage: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-[#FAF9FF] min-h-screen pb-16">
+    <div className="w-full bg-white min-h-screen pb-16">
       {/* Header Banner */}
-      <section className="py-16 bg-gradient-to-b from-[#FAF9FF] via-white to-[#FAF9FF] border-b border-purple-100">
+      <section className="py-16 bg-white border-b border-[#9E3371]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAFF] text-[#6D3DF5] text-xs font-bold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
               OUR PROFESSIONAL SERVICES
             </div>
-            <h1 className="text-4xl sm:text-5xl font-black text-[#170B3B] mb-4">
-              Tailored HR & Placement <span className="text-[#6D3DF5]">Solutions</span>
+            <h1 className="text-4xl sm:text-5xl font-black text-[#9E3371] mb-4">
+              Tailored HR & Placement <span className="text-[#9E3371]">Solutions</span>
             </h1>
-            <p className="text-base text-[#5D5A75] leading-relaxed">
+            <p className="text-base text-[#9E3371] leading-relaxed">
               JMS Group provides end-to-end solutions for job seekers looking to advance their careers and corporate clients seeking top-tier talent.
             </p>
           </div>
@@ -114,7 +114,7 @@ export const ServicesPage: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-white rounded-3xl overflow-hidden border border-purple-100/90 shadow-sm hover:shadow-xl hover:border-[#6D3DF5]/30 transition-all flex flex-col justify-between group"
+                  className="bg-white rounded-3xl overflow-hidden border border-[#9E3371] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group"
                 >
                   <div>
                     {/* Service Visual Header */}
@@ -124,22 +124,22 @@ export const ServicesPage: React.FC = () => {
                         alt={srv.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#170B3B]/80 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-[#9E3371]/60" />
                       <div className="absolute bottom-4 left-6 flex items-center gap-3 text-white">
-                        <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
-                          <Icon className="w-5 h-5 text-white" />
+                        <div className="w-10 h-10 rounded-xl bg-white text-[#9E3371] flex items-center justify-center border border-white">
+                          <Icon className="w-5 h-5 text-[#9E3371]" />
                         </div>
-                        <h3 className="text-xl font-bold">{srv.title}</h3>
+                        <h3 className="text-xl font-bold text-white">{srv.title}</h3>
                       </div>
                     </div>
 
                     <div className="p-6">
-                      <p className="text-xs font-semibold text-[#6D3DF5] mb-4">{srv.subtitle}</p>
+                      <p className="text-xs font-semibold text-[#9E3371] mb-4">{srv.subtitle}</p>
                       <div className="space-y-2.5 mb-6">
                         {srv.features.map((feat) => (
                           <div key={feat} className="flex items-center gap-3">
-                            <CheckCircle2 className="w-4 h-4 text-[#6D3DF5] flex-shrink-0" />
-                            <span className="text-xs sm:text-sm text-[#5D5A75]">{feat}</span>
+                            <CheckCircle2 className="w-4 h-4 text-[#9E3371] flex-shrink-0" />
+                            <span className="text-xs sm:text-sm text-[#9E3371]">{feat}</span>
                           </div>
                         ))}
                       </div>
@@ -149,10 +149,10 @@ export const ServicesPage: React.FC = () => {
                   <div className="p-6 pt-0">
                     <Link
                       to={srv.link}
-                      className="inline-flex items-center gap-2 text-sm font-bold text-[#6D3DF5] hover:text-[#4C1D95] transition-colors pt-4 border-t border-purple-50 w-full"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-[#9E3371] hover:underline transition-colors pt-4 border-t border-[#9E3371] w-full"
                     >
                       <span>Explore Service Details</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4 text-[#9E3371]" />
                     </Link>
                   </div>
                 </motion.div>
@@ -163,18 +163,18 @@ export const ServicesPage: React.FC = () => {
       </section>
 
       {/* Why Choose Our Services */}
-      <section className="py-16 bg-white border-y border-purple-100">
+      <section className="py-16 bg-white border-y border-[#9E3371]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-extrabold text-[#170B3B]">Why Choose JMS Group Services</h2>
+            <h2 className="text-3xl font-extrabold text-[#9E3371]">Why Choose JMS Group Services</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyChooseServices.map((item) => (
-              <div key={item.title} className="p-6 rounded-3xl bg-[#FAF9FF] border border-purple-100/80">
-                <ShieldCheck className="w-8 h-8 text-[#6D3DF5] mb-4" />
-                <h4 className="text-base font-bold text-[#170B3B] mb-2">{item.title}</h4>
-                <p className="text-xs text-[#5D5A75] leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="p-6 rounded-3xl bg-white border border-[#9E3371]">
+                <ShieldCheck className="w-8 h-8 text-[#9E3371] mb-4" />
+                <h4 className="text-base font-bold text-[#9E3371] mb-2">{item.title}</h4>
+                <p className="text-xs text-[#9E3371] leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -182,21 +182,21 @@ export const ServicesPage: React.FC = () => {
       </section>
 
       {/* Recruitment Process Section */}
-      <section className="py-16 bg-[#FAF9FF]">
+      <section className="py-16 bg-white border-b border-[#9E3371]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white text-[#6D3DF5] text-xs font-bold uppercase tracking-wider mb-4 border border-purple-100">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
               METHODOLOGY
             </div>
-            <h2 className="text-3xl font-extrabold text-[#170B3B]">Our End-to-End Service Delivery Process</h2>
+            <h2 className="text-3xl font-extrabold text-[#9E3371]">Our End-to-End Service Delivery Process</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step) => (
-              <div key={step.num} className="p-6 rounded-3xl bg-white border border-purple-100/80 shadow-sm relative">
-                <span className="text-3xl font-black text-[#6D3DF5]/20 block mb-3">{step.num}</span>
-                <h3 className="text-base font-bold text-[#170B3B] mb-2">{step.title}</h3>
-                <p className="text-xs text-[#5D5A75] leading-relaxed">{step.desc}</p>
+              <div key={step.num} className="p-6 rounded-3xl bg-white border border-[#9E3371] shadow-sm relative">
+                <span className="text-3xl font-black text-[#9E3371]/40 block mb-3">{step.num}</span>
+                <h3 className="text-base font-bold text-[#9E3371] mb-2">{step.title}</h3>
+                <p className="text-xs text-[#9E3371] leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -207,14 +207,14 @@ export const ServicesPage: React.FC = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-extrabold text-[#170B3B]">Industries We Support</h2>
+            <h2 className="text-3xl font-extrabold text-[#9E3371]">Industries We Support</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {industriesSupported.map((ind) => (
-              <div key={ind} className="p-4 rounded-2xl bg-[#FAF9FF] border border-purple-100/80 flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#6D3DF5] flex-shrink-0" />
-                <span className="text-sm font-bold text-[#170B3B]">{ind}</span>
+              <div key={ind} className="p-4 rounded-2xl bg-white border border-[#9E3371] flex items-center gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[#9E3371] flex-shrink-0" />
+                <span className="text-sm font-bold text-[#9E3371]">{ind}</span>
               </div>
             ))}
           </div>
@@ -222,13 +222,13 @@ export const ServicesPage: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-[#4C1D95] via-[#6D3DF5] to-[#7C3AED] text-white">
+      <section className="py-16 bg-[#9E3371] text-white border-t border-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-black mb-4">Talk To Our HR & Placement Experts</h2>
-          <p className="text-purple-100 mb-8 text-sm sm:text-base">Ready to hire top corporate candidates or accelerate your career? Contact JMS Group today.</p>
+          <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Talk To Our HR & Placement Experts</h2>
+          <p className="text-white mb-8 text-sm sm:text-base">Ready to hire top corporate candidates or accelerate your career? Contact JMS Group today.</p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#6D3DF5] font-bold text-sm shadow-xl hover:bg-[#FAF9FF] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#9E3371] font-bold text-sm shadow-xl hover:bg-[#862B5F] hover:text-white transition-all"
           >
             <span>Get Started Now</span>
             <ArrowRight className="w-4 h-4" />
@@ -240,3 +240,4 @@ export const ServicesPage: React.FC = () => {
 };
 
 export default ServicesPage;
+
