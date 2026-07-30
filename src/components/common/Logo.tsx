@@ -13,7 +13,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '' }) => {
       <img
         src="/logo/logo.png"
         alt="JMS GROUP - Growing Your Self"
-        className="h-12 sm:h-14 md:h-16 lg:h-[72px] w-auto object-contain max-w-[240px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px]"
+        className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-[72px] w-auto max-w-[170px] xs:max-w-[210px] sm:max-w-[300px] md:max-w-[360px] lg:max-w-[420px] object-contain flex-shrink-0"
       />
     </Link>
   );
