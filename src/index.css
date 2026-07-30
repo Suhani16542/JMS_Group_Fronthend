@@ -1,15 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-jms-primary: #9E3371;
-  --color-jms-primary-hover: #862B5F;
-  --color-jms-deep: #9E3371;
-  --color-jms-footer: #9E3371;
-  --color-jms-violet: #9E3371;
-  --color-jms-lavender: #FFFFFF;
-  --color-jms-dark: #9E3371;
-  --color-jms-muted: #9E3371;
-  --color-jms-border: #9E3371;
+  --color-jms-primary: #8B1E5C;
+  --color-jms-primary-hover: #7A1F4D;
+  --color-jms-deep: #7A1F4D;
+  --color-jms-heading: #6D214F;
+  --color-jms-magenta: #C2188B;
+  
+  --color-jms-bg-main: #FFFFFF;
+  --color-jms-bg-secondary: #FAF8FB;
+  --color-jms-bg-card: #FFFFFF;
+  --color-jms-bg-alt: #FAF8FB;
+
+  --color-jms-text-primary: #222222;
+  --color-jms-text-secondary: #555555;
+  --color-jms-text-muted: #777777;
+  --color-jms-border: rgba(139, 30, 92, 0.15);
 }
 
 @layer base {
@@ -28,11 +34,13 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #FFFFFF;
+    color: #222222;
   }
   
   body {
-    background-color: #ffffff;
-    color: #9E3371;
+    background-color: #FFFFFF;
+    color: #222222;
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
@@ -48,31 +56,89 @@
     font-family: inherit;
     font-size: 100%;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #6D214F;
+  }
+
+  p {
+    color: #555555;
+  }
 }
 
-/* Custom Utilities - Strict 2-Color Theme (#9E3371 & #FFFFFF) */
+/* Custom Utilities - Luxury Corporate White & Rich Dark Maroon Theme */
 .glass-effect {
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid #9E3371;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(139, 30, 92, 0.12);
 }
 
 .text-gradient {
-  color: #9E3371;
+  background: linear-gradient(135deg, #7A1F4D 0%, #8B1E5C 50%, #C2188B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7A1F4D 0%, #8B1E5C 50%, #C2188B 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(139, 30, 92, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(194, 24, 139, 0.4);
+  background: linear-gradient(135deg, #6D214F 0%, #7A1F4D 50%, #B0157C 100%);
+}
+
+.btn-secondary {
+  background: #FFFFFF;
+  border: 2px solid #8B1E5C;
+  color: #6D214F;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: all 0.35s ease;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #7A1F4D 0%, #8B1E5C 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(139, 30, 92, 0.25);
 }
 
 .bg-purple-gradient {
-  background: #9E3371;
+  background: linear-gradient(135deg, #7A1F4D 0%, #8B1E5C 50%, #C2188B 100%);
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.bg-purple-gradient:hover {
-  background: #862B5F;
-  box-shadow: 0 10px 25px -5px rgba(158, 51, 113, 0.45);
+.bg-hero-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(194, 24, 139, 0.05) 0%, rgba(255, 255, 255, 1) 70%);
 }
 
-.bg-hero-gradient {
+.jms-card {
   background: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid rgba(139, 30, 92, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jms-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(194, 24, 139, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(139, 30, 92, 0.18);
+}
+
+.purple-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(139, 30, 92, 0.2) 50%, transparent 100%);
 }
 
 /* Micro-interaction Helper Classes */
@@ -82,7 +148,7 @@
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px -5px rgba(158, 51, 113, 0.2);
+  box-shadow: 0 14px 30px -5px rgba(139, 30, 92, 0.18);
 }
 
 .hover-shimmer {
@@ -100,7 +166,7 @@
   background: linear-gradient(
     60deg,
     transparent 30%,
-    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.15) 50%,
     transparent 70%
   );
   transform: rotate(30deg) translateX(-100%);
@@ -110,4 +176,5 @@
 .hover-shimmer:hover::after {
   transform: rotate(30deg) translateX(100%);
 }
+
 

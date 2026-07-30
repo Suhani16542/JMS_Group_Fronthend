@@ -15,7 +15,7 @@ export const WhyChooseUsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-20 bg-[#FAF8FB] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -27,27 +27,27 @@ export const WhyChooseUsSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6 flex flex-col items-start"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#7A1F4D] text-xs font-bold uppercase tracking-wider mb-4 border border-[#8B1E5C]/20 shadow-xs">
               WHY CHOOSE JMS GROUP
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#9E3371] tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#6D214F] tracking-tight mb-6">
               We Bring The Right People <br />
-              <span className="text-[#9E3371]">Together</span>
+              <span className="text-gradient">Together</span>
             </h2>
 
-            <p className="text-base text-[#9E3371] leading-relaxed mb-8">
+            <p className="text-base text-[#555555] leading-relaxed mb-8">
               We combine deep industry insights, advanced candidate screening, and personalized counseling to deliver recruitment outcomes that accelerate organizational success.
             </p>
 
             {/* Feature List (2 columns on sm) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
               {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#9E3371]">
-                  <div className="w-7 h-7 rounded-lg bg-[#9E3371] text-white flex items-center justify-center flex-shrink-0">
+                <div key={feature} className="flex items-center gap-3 p-3.5 rounded-[18px] bg-white border border-[#8B1E5C]/15 shadow-sm hover:border-[#8B1E5C]/40 hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#7A1F4D] to-[#C2188B] text-white flex items-center justify-center flex-shrink-0 shadow-md">
                     <CheckCircle2 className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-sm font-semibold text-[#9E3371]">{feature}</span>
+                  <span className="text-sm font-semibold text-[#6D214F]">{feature}</span>
                 </div>
               ))}
             </div>
@@ -62,7 +62,7 @@ export const WhyChooseUsSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#9E3371] group">
+            <div className="relative rounded-[18px] overflow-hidden shadow-xl border border-[#8B1E5C]/20 group bg-white">
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop" 
                 alt="JMS Group Hiring Process Video Preview" 
@@ -70,9 +70,9 @@ export const WhyChooseUsSection: React.FC = () => {
               />
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-[#9E3371]/80 flex flex-col justify-between p-8 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#8B1E5C]/90 via-[#8B1E5C]/40 to-transparent flex flex-col justify-between p-8 text-white">
                 <div className="self-end">
-                  <span className="px-3 py-1 rounded-full bg-white text-[#9E3371] text-xs font-semibold uppercase tracking-wider">
+                  <span className="px-3.5 py-1.5 rounded-full bg-white text-[#8B1E5C] border border-white text-xs font-bold uppercase tracking-wider shadow-md">
                     Corporate Story
                   </span>
                 </div>
@@ -88,10 +88,10 @@ export const WhyChooseUsSection: React.FC = () => {
                   {/* Play Button */}
                   <button
                     onClick={() => setIsVideoOpen(true)}
-                    className="w-16 h-16 rounded-full bg-white text-[#9E3371] flex items-center justify-center shadow-2xl hover:scale-110 transition-all flex-shrink-0"
+                    className="w-16 h-16 rounded-full bg-white text-[#8B1E5C] flex items-center justify-center shadow-2xl hover:scale-110 transition-all flex-shrink-0"
                     aria-label="Play video"
                   >
-                    <Play className="w-7 h-7 fill-[#9E3371] ml-1 text-[#9E3371]" />
+                    <Play className="w-7 h-7 fill-[#8B1E5C] ml-1 text-[#8B1E5C]" />
                   </button>
                 </div>
               </div>
@@ -103,11 +103,11 @@ export const WhyChooseUsSection: React.FC = () => {
 
       {/* Video Modal */}
       {isVideoOpen && (
-        <div className="fixed inset-0 z-50 bg-[#9E3371]/90 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="relative w-full max-w-4xl bg-white rounded-2xl overflow-hidden shadow-2xl border-2 border-[#9E3371]">
-            <button 
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#121018]/90 backdrop-blur-md">
+          <div className="relative w-full max-w-4xl bg-[#231B33] rounded-[18px] overflow-hidden border border-[#8E24AA]/50 shadow-2xl">
+            <button
               onClick={() => setIsVideoOpen(false)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-[#9E3371] text-white flex items-center justify-center hover:bg-[#862B5F]"
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-[#121018] text-white hover:text-[#E91E63] transition-colors"
             >
               <X className="w-6 h-6 text-white" />
             </button>

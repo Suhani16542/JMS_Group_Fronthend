@@ -41,14 +41,14 @@ export const ServicesSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8FB] text-[#7A1F4D] text-xs font-bold uppercase tracking-wider mb-4 border border-[#8B1E5C]/20 shadow-xs">
             OUR PROFESSIONAL SERVICES
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#9E3371] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#6D214F] tracking-tight">
             Complete HR & Career Solutions <br />
-            <span className="text-[#9E3371]">For People & Businesses</span>
+            <span className="text-gradient">For People & Businesses</span>
           </h2>
-          <p className="text-[#9E3371] mt-4 text-base">
+          <p className="text-[#555555] mt-4 text-base">
             Complete HR and career solutions designed to empower job seekers and accelerate corporate growth.
           </p>
         </div>
@@ -64,24 +64,24 @@ export const ServicesSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-white rounded-3xl p-8 border border-[#9E3371] shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                className="group relative bg-white rounded-[18px] p-8 border border-[#8B1E5C]/15 shadow-sm hover:shadow-xl hover:border-[#8B1E5C]/40 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Top Hover Accent */}
-                <div className="absolute top-0 left-8 right-8 h-1 bg-[#9E3371] rounded-t-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] rounded-t-full opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <div>
                   {/* Icon Container */}
-                  <div className="w-14 h-14 rounded-2xl bg-[#9E3371] text-white flex items-center justify-center transition-colors duration-300 mb-6 shadow-sm">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#7A1F4D] to-[#C2188B] text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-6 shadow-md">
                     <IconComponent className="w-7 h-7 text-white" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-[#9E3371] mb-3 transition-colors">
+                  <h3 className="text-xl font-bold text-[#6D214F] mb-3 group-hover:text-[#C2188B] transition-colors">
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-[#9E3371] leading-relaxed mb-6">
+                  <p className="text-sm text-[#555555] leading-relaxed mb-6">
                     {service.description}
                   </p>
                 </div>
@@ -89,7 +89,7 @@ export const ServicesSection: React.FC = () => {
                 {/* Learn More Link */}
                 <Link
                   to={service.link}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#9E3371] hover:underline transition-colors pt-4 border-t border-[#9E3371]"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#8B1E5C] hover:text-[#C2188B] transition-colors pt-4 border-t border-[#8B1E5C]/15"
                 >
                   <span>Learn More</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
@@ -98,7 +98,6 @@ export const ServicesSection: React.FC = () => {
             );
           })}
         </div>
-
       </div>
     </section>
   );

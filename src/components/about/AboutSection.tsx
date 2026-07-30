@@ -18,7 +18,7 @@ export const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-20 bg-[#FAF8FB] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
@@ -33,7 +33,7 @@ export const AboutSection: React.FC = () => {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Main Image */}
-              <div className="rounded-3xl overflow-hidden border-4 border-[#9E3371] shadow-xl">
+              <div className="rounded-[18px] overflow-hidden border border-[#8B1E5C]/20 shadow-xl bg-white">
                 <img 
                   src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=900&auto=format&fit=crop" 
                   alt="JMS Group Team Consultation" 
@@ -42,7 +42,7 @@ export const AboutSection: React.FC = () => {
               </div>
 
               {/* Secondary Floating Image Collage */}
-              <div className="absolute -bottom-8 -right-4 sm:right-2 w-48 sm:w-56 rounded-2xl overflow-hidden border-4 border-[#9E3371] shadow-2xl hidden sm:block">
+              <div className="absolute -bottom-8 -right-4 sm:right-2 w-48 sm:w-56 rounded-[18px] overflow-hidden border border-[#8B1E5C]/20 shadow-2xl hidden sm:block bg-white">
                 <img 
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500&auto=format&fit=crop" 
                   alt="Candidate Interview" 
@@ -51,9 +51,9 @@ export const AboutSection: React.FC = () => {
               </div>
 
               {/* Stat Overlay Badge */}
-              <div className="absolute -top-6 -left-4 sm:left-2 bg-[#9E3371] text-white p-5 rounded-2xl shadow-xl border border-white max-w-[200px]">
-                <div className="text-3xl font-extrabold leading-none text-white">10K+</div>
-                <div className="text-xs text-white font-medium mt-1">Candidates Placed Successfully</div>
+              <div className="absolute -top-6 -left-4 sm:left-2 bg-white text-[#222222] p-5 rounded-[18px] shadow-xl border border-[#8B1E5C]/20 max-w-[200px]">
+                <div className="text-3xl font-extrabold leading-none text-[#8B1E5C]">10K+</div>
+                <div className="text-xs text-[#555555] font-medium mt-1">Candidates Placed Successfully</div>
               </div>
 
             </div>
@@ -67,19 +67,19 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6 flex flex-col items-start"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#8B1E5C] text-xs font-bold uppercase tracking-wider mb-4 border border-[#8B1E5C]/20 shadow-xs">
               ABOUT JMS GROUP
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#9E3371] tracking-tight mb-6">
-              Growing <span className="text-[#9E3371]">Your Self</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#6D214F] tracking-tight mb-6">
+              Growing <span className="text-gradient">Your Self</span>
             </h2>
 
-            <p className="text-base text-[#9E3371] leading-relaxed mb-6">
+            <p className="text-base text-[#555555] leading-relaxed mb-6">
               JMS Group is a trusted leader in HR Consulting, Placement Services, Career Counseling, and Job Placement. We are committed to empowering individuals to achieve career fulfillment and helping companies build high-performing workforces.
             </p>
 
-            <p className="text-sm text-[#9E3371] leading-relaxed mb-8">
+            <p className="text-sm text-[#777777] leading-relaxed mb-8">
               With over two decades of industry expertise, our custom recruitment methodologies ensure seamless alignment between candidate aspirations and organizational goals.
             </p>
 
@@ -90,14 +90,14 @@ export const AboutSection: React.FC = () => {
                 return (
                   <div 
                     key={stat.label}
-                    className="p-4 rounded-2xl bg-white border border-[#9E3371] shadow-sm flex items-center gap-3.5"
+                    className="p-4 rounded-[18px] bg-white border border-[#8B1E5C]/15 shadow-sm flex items-center gap-3.5 hover:border-[#8B1E5C]/40 hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[#9E3371] text-white flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7A1F4D] to-[#C2188B] text-white flex items-center justify-center flex-shrink-0 shadow-md">
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <div className="text-xl font-bold text-[#9E3371] leading-none">{stat.value}</div>
-                      <div className="text-xs text-[#9E3371] font-medium mt-1">{stat.label}</div>
+                      <div className="text-xl font-bold text-[#6D214F] leading-none">{stat.value}</div>
+                      <div className="text-xs text-[#555555] font-medium mt-1">{stat.label}</div>
                     </div>
                   </div>
                 );
@@ -107,10 +107,10 @@ export const AboutSection: React.FC = () => {
             {/* CTA Button */}
             <Link
               to="/about"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-[#9E3371] border border-white shadow-lg hover:bg-[#862B5F] hover:scale-[1.02] transition-all"
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] shadow-[0_4px_20px_rgba(139,30,92,0.3)] hover:shadow-[0_10px_30px_rgba(194,24,139,0.45)] hover:-translate-y-1 transition-all duration-300 border border-white/20"
             >
               <span>Know More About Us</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-white" />
             </Link>
 
           </motion.div>

@@ -35,14 +35,14 @@ export const CaseStudiesSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8FB] text-[#7A1F4D] text-xs font-bold uppercase tracking-wider mb-4 border border-[#8B1E5C]/20 shadow-xs">
               SUCCESS STORIES
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#9E3371] tracking-tight">
-              Our <span className="text-[#9E3371]">Business Cases</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#6D214F] tracking-tight">
+              Our <span className="text-gradient">Business Cases</span>
             </h2>
           </div>
-          <p className="text-[#9E3371] text-sm sm:text-base max-w-md mt-4 md:mt-0">
+          <p className="text-[#555555] text-sm sm:text-base max-w-md mt-4 md:mt-0">
             Real impact delivered through tailored recruitment, executive search, and HR consulting solutions.
           </p>
         </div>
@@ -56,7 +56,7 @@ export const CaseStudiesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-3xl overflow-hidden border border-[#9E3371] shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
+              className="bg-white rounded-[18px] overflow-hidden border border-[#8B1E5C]/15 shadow-sm hover:shadow-xl hover:border-[#8B1E5C]/40 hover:-translate-y-2 transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
                 {/* Image Container */}
@@ -67,7 +67,7 @@ export const CaseStudiesSection: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-[#9E3371] text-[11px] font-bold text-white shadow-sm border border-white">
+                    <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#7A1F4D] to-[#C2188B] text-[11px] font-bold text-white shadow-md">
                       {item.category}
                     </span>
                   </div>
@@ -75,10 +75,10 @@ export const CaseStudiesSection: React.FC = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-[#9E3371] leading-snug mb-3">
+                  <h3 className="text-lg font-bold text-[#6D214F] leading-snug mb-3 group-hover:text-[#C2188B] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#9E3371] leading-relaxed">
+                  <p className="text-xs text-[#555555] leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export const CaseStudiesSection: React.FC = () => {
               <div className="px-6 pb-6 pt-2">
                 <Link
                   to="/blog"
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#9E3371] hover:underline transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#8B1E5C] hover:text-[#C2188B] transition-colors"
                 >
                   <span>Read Case Study</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

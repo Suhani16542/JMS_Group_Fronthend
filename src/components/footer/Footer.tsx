@@ -5,16 +5,16 @@ import { Phone, Mail, MapPin, Clock, Facebook, Linkedin, Instagram, Youtube, Sen
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#9E3371] text-white pt-16 pb-8 border-t border-white/20 relative overflow-hidden">
+    <footer className="bg-[#FAF8FB] text-[#222222] pt-16 pb-8 border-t-2 border-[#8B1E5C]/20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
         {/* Newsletter / Stay Connected Strip */}
-        <div className="mb-14 p-8 sm:p-10 rounded-3xl bg-[#9E3371] border border-white/40 shadow-2xl relative overflow-hidden">
+        <div className="mb-14 p-8 sm:p-10 rounded-[18px] bg-white border border-[#8B1E5C]/20 shadow-xl relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-7">
-              <span className="text-xs font-bold uppercase tracking-wider text-white/90 mb-1 block">STAY CONNECTED WITH JMS GROUP</span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">Get Jobs & HR Insights in Your Inbox</h3>
-              <p className="text-xs sm:text-sm text-white/80">Subscribe to receive curated corporate openings, career guidance, and HR trends directly.</p>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#8B1E5C] mb-1 block">STAY CONNECTED WITH JMS GROUP</span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#6D214F] mb-2">Get Jobs & HR Insights in Your Inbox</h3>
+              <p className="text-xs sm:text-sm text-[#555555]">Subscribe to receive curated corporate openings, career guidance, and HR trends directly.</p>
             </div>
             <div className="lg:col-span-5">
               <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3">
@@ -22,11 +22,11 @@ export const Footer: React.FC = () => {
                   type="email"
                   placeholder="Enter your email..."
                   required
-                  className="w-full px-4 py-3 rounded-full bg-white text-[#9E3371] placeholder-[#9E3371]/60 text-xs sm:text-sm focus:outline-none border border-white"
+                  className="w-full px-5 py-3.5 rounded-full bg-[#FAF8FB] text-[#222222] placeholder-[#777777] text-xs sm:text-sm focus:outline-none border border-[#8B1E5C]/30 focus:border-[#8B1E5C]"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-full text-xs font-bold text-[#9E3371] bg-white shadow-lg flex items-center justify-center gap-2 hover:bg-white/90 transition-all flex-shrink-0"
+                  className="px-6 py-3.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] shadow-md flex items-center justify-center gap-2 hover:shadow-[0_8px_25px_rgba(194,24,139,0.4)] hover:-translate-y-0.5 transition-all flex-shrink-0"
                 >
                   <span>Subscribe</span>
                   <Send className="w-3.5 h-3.5" />
@@ -37,31 +37,31 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Main Footer Columns Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-white/30">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-[#8B1E5C]/15">
           
           {/* Column 1: Official Logo & Company Intro */}
           <div className="lg:col-span-4 flex flex-col items-start">
-            {/* White Rounded Premium Card Container for Footer Logo */}
-            <div className="bg-white p-3.5 sm:p-4 rounded-2xl shadow-xl border border-white mb-5 inline-flex items-center justify-center">
+            {/* Clean White Container for Footer Logo */}
+            <div className="bg-white p-4 sm:p-5 rounded-[18px] shadow-sm border border-[#8B1E5C]/15 mb-5 inline-flex items-center justify-center">
               <Logo />
             </div>
             
-            <p className="text-xs sm:text-sm text-white/90 leading-relaxed mb-4 max-w-sm">
+            <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-5 max-w-sm">
               JMS Group is a premier corporate placement, HR consulting, career counseling and executive recruitment organization. Growing Your Self with JMS Group.
             </p>
 
             {/* Social Icons */}
             <div className="flex items-center gap-3">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white text-[#9E3371] border border-white flex items-center justify-center hover:bg-[#862B5F] hover:text-white transition-all duration-300">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full bg-white text-[#8B1E5C] border border-[#8B1E5C]/20 flex items-center justify-center hover:bg-gradient-to-r hover:from-[#7A1F4D] hover:to-[#C2188B] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-xs">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-white text-[#9E3371] border border-white flex items-center justify-center hover:bg-[#862B5F] hover:text-white transition-all duration-300">
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="w-10 h-10 rounded-full bg-white text-[#8B1E5C] border border-[#8B1E5C]/20 flex items-center justify-center hover:bg-gradient-to-r hover:from-[#7A1F4D] hover:to-[#C2188B] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-xs">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-white text-[#9E3371] border border-white flex items-center justify-center hover:bg-[#862B5F] hover:text-white transition-all duration-300">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full bg-white text-[#8B1E5C] border border-[#8B1E5C]/20 flex items-center justify-center hover:bg-gradient-to-r hover:from-[#7A1F4D] hover:to-[#C2188B] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-xs">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" className="w-9 h-9 rounded-full bg-white text-[#9E3371] border border-white flex items-center justify-center hover:bg-[#862B5F] hover:text-white transition-all duration-300">
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" className="w-10 h-10 rounded-full bg-white text-[#8B1E5C] border border-[#8B1E5C]/20 flex items-center justify-center hover:bg-gradient-to-r hover:from-[#7A1F4D] hover:to-[#C2188B] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-xs">
                 <Youtube className="w-4 h-4" />
               </a>
             </div>
@@ -69,59 +69,59 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: COMPANY */}
           <div className="lg:col-span-2">
-            <h4 className="text-sm font-bold text-white mb-4 border-b border-white/40 pb-2 inline-block">COMPANY</h4>
-            <ul className="flex flex-col gap-2.5 text-xs text-white/90">
-              <li><Link to="/about" className="hover:text-white hover:underline inline-block transition-all duration-200">About Us</Link></li>
-              <li><Link to="/our-team" className="hover:text-white hover:underline inline-block transition-all duration-200">Our Team</Link></li>
-              <li><Link to="/careers" className="hover:text-white hover:underline inline-block transition-all duration-200">Careers</Link></li>
-              <li><Link to="/jobs" className="hover:text-white hover:underline inline-block transition-all duration-200">Recent Openings</Link></li>
+            <h4 className="text-sm font-bold text-[#6D214F] mb-4 border-b border-[#8B1E5C]/30 pb-2 inline-block">COMPANY</h4>
+            <ul className="flex flex-col gap-2.5 text-xs text-[#555555]">
+              <li><Link to="/about" className="hover:text-[#C2188B] transition-colors">About Us</Link></li>
+              <li><Link to="/our-team" className="hover:text-[#C2188B] transition-colors">Our Team</Link></li>
+              <li><Link to="/careers" className="hover:text-[#C2188B] transition-colors">Careers</Link></li>
+              <li><Link to="/jobs" className="hover:text-[#C2188B] transition-colors">Recent Openings</Link></li>
             </ul>
           </div>
 
           {/* Column 3: SERVICES */}
           <div className="lg:col-span-2">
-            <h4 className="text-sm font-bold text-white mb-4 border-b border-white/40 pb-2 inline-block">SERVICES</h4>
-            <ul className="flex flex-col gap-2.5 text-xs text-white/90">
-              <li><Link to="/services/placement" className="hover:text-white hover:underline inline-block transition-all duration-200">Placement Services</Link></li>
-              <li><Link to="/services/hr-consulting" className="hover:text-white hover:underline inline-block transition-all duration-200">HR Consulting</Link></li>
-              <li><Link to="/career-counselling" className="hover:text-white hover:underline inline-block transition-all duration-200">Career Counseling</Link></li>
-              <li><Link to="/services/job-placement" className="hover:text-white hover:underline inline-block transition-all duration-200">Job Placement</Link></li>
+            <h4 className="text-sm font-bold text-[#6D214F] mb-4 border-b border-[#8B1E5C]/30 pb-2 inline-block">SERVICES</h4>
+            <ul className="flex flex-col gap-2.5 text-xs text-[#555555]">
+              <li><Link to="/services/placement" className="hover:text-[#C2188B] transition-colors">Placement Services</Link></li>
+              <li><Link to="/services/hr-consulting" className="hover:text-[#C2188B] transition-colors">HR Consulting</Link></li>
+              <li><Link to="/career-counselling" className="hover:text-[#C2188B] transition-colors">Career Counseling</Link></li>
+              <li><Link to="/services/job-placement" className="hover:text-[#C2188B] transition-colors">Job Placement</Link></li>
             </ul>
           </div>
 
           {/* Column 4: QUICK LINKS */}
           <div className="lg:col-span-2">
-            <h4 className="text-sm font-bold text-white mb-4 border-b border-white/40 pb-2 inline-block">QUICK LINKS</h4>
-            <ul className="flex flex-col gap-2.5 text-xs text-white/90">
-              <li><Link to="/upload-resume" className="hover:text-white hover:underline inline-block transition-all duration-200">Upload Resume</Link></li>
-              <li><Link to="/contact" className="hover:text-white hover:underline inline-block transition-all duration-200">Contact Us</Link></li>
-              <li><Link to="/faqs" className="hover:text-white hover:underline inline-block transition-all duration-200">FAQs</Link></li>
-              <li><Link to="/blog" className="hover:text-white hover:underline inline-block transition-all duration-200">Blog</Link></li>
-              <li><Link to="/privacy-policy" className="hover:text-white hover:underline inline-block transition-all duration-200">Privacy Policy</Link></li>
-              <li><Link to="/terms-conditions" className="hover:text-white hover:underline inline-block transition-all duration-200">Terms & Conditions</Link></li>
-              <li><Link to="/disclaimer" className="hover:text-white hover:underline inline-block transition-all duration-200">Disclaimer</Link></li>
-              <li><Link to="/cookie-policy" className="hover:text-white hover:underline inline-block transition-all duration-200">Cookie Policy</Link></li>
+            <h4 className="text-sm font-bold text-[#6D214F] mb-4 border-b border-[#8B1E5C]/30 pb-2 inline-block">QUICK LINKS</h4>
+            <ul className="flex flex-col gap-2.5 text-xs text-[#555555]">
+              <li><Link to="/upload-resume" className="hover:text-[#C2188B] transition-colors">Upload Resume</Link></li>
+              <li><Link to="/contact" className="hover:text-[#C2188B] transition-colors">Contact Us</Link></li>
+              <li><Link to="/faqs" className="hover:text-[#C2188B] transition-colors">FAQs</Link></li>
+              <li><Link to="/blog" className="hover:text-[#C2188B] transition-colors">Blog</Link></li>
+              <li><Link to="/privacy-policy" className="hover:text-[#C2188B] transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-conditions" className="hover:text-[#C2188B] transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/disclaimer" className="hover:text-[#C2188B] transition-colors">Disclaimer</Link></li>
+              <li><Link to="/cookie-policy" className="hover:text-[#C2188B] transition-colors">Cookie Policy</Link></li>
             </ul>
           </div>
 
           {/* Column 5: CONTACT */}
           <div className="lg:col-span-2">
-            <h4 className="text-sm font-bold text-white mb-4 border-b border-white/40 pb-2 inline-block">CONTACT</h4>
-            <ul className="flex flex-col gap-3 text-xs text-white/90">
+            <h4 className="text-sm font-bold text-[#6D214F] mb-4 border-b border-[#8B1E5C]/30 pb-2 inline-block">CONTACT</h4>
+            <ul className="flex flex-col gap-3 text-xs text-[#555555]">
               <li className="flex items-start gap-2.5 group">
-                <Phone className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
-                <a href="tel:+911234567890" className="hover:text-white hover:underline transition-colors">+91 12345 67890</a>
+                <Phone className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
+                <a href="tel:+911234567890" className="hover:text-[#C2188B] transition-colors">+91 12345 67890</a>
               </li>
               <li className="flex items-start gap-2.5 group">
-                <Mail className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
-                <a href="mailto:info@jmsgroup.com" className="hover:text-white hover:underline transition-colors">info@jmsgroup.com</a>
+                <Mail className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
+                <a href="mailto:info@jmsgroup.com" className="hover:text-[#C2188B] transition-colors">info@jmsgroup.com</a>
               </li>
               <li className="flex items-start gap-2.5 group">
-                <MapPin className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
                 <span>123, Business Park, New Delhi, India - 110001</span>
               </li>
               <li className="flex items-start gap-2.5 group">
-                <Clock className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
+                <Clock className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
                 <span>Mon - Sat: 9:30 AM - 6:30 PM</span>
               </li>
             </ul>
@@ -130,16 +130,16 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Copyright & Legal Links Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/80 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#777777] gap-4">
           <div>© 2026 JMS Group. All Rights Reserved.</div>
           <div className="flex flex-wrap items-center gap-4 text-[11px]">
-            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/privacy-policy" className="hover:text-[#C2188B] transition-colors">Privacy Policy</Link>
             <span>•</span>
-            <Link to="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link to="/terms-conditions" className="hover:text-[#C2188B] transition-colors">Terms & Conditions</Link>
             <span>•</span>
-            <Link to="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
+            <Link to="/disclaimer" className="hover:text-[#C2188B] transition-colors">Disclaimer</Link>
             <span>•</span>
-            <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
+            <Link to="/cookie-policy" className="hover:text-[#C2188B] transition-colors">Cookie Policy</Link>
           </div>
         </div>
 

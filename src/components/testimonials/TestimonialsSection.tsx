@@ -36,13 +36,13 @@ export const TestimonialsSection: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E3371] text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8FB] text-[#7A1F4D] text-xs font-bold uppercase tracking-wider mb-4 border border-[#8B1E5C]/20 shadow-xs">
             CLIENT & CANDIDATE REVIEWS
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#9E3371] tracking-tight">
-            What Our Clients & <span className="text-[#9E3371]">Candidates Say</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#6D214F] tracking-tight">
+            What Our Clients & <span className="text-gradient">Candidates Say</span>
           </h2>
-          <p className="text-[#9E3371] mt-4 text-sm sm:text-base">
+          <p className="text-[#555555] mt-4 text-sm sm:text-base">
             Trusted by corporate leaders and ambitious professionals across industries.
           </p>
         </div>
@@ -56,37 +56,37 @@ export const TestimonialsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-3xl p-8 border border-[#9E3371] shadow-sm hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between"
+              className="bg-white rounded-[18px] p-8 border border-[#8B1E5C]/15 shadow-sm hover:shadow-xl hover:border-[#8B1E5C]/40 hover:-translate-y-2 transition-all duration-300 relative flex flex-col justify-between"
             >
               {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-[#9E3371]/40">
+              <div className="absolute top-6 right-6 text-[#8B1E5C]/20">
                 <Quote className="w-10 h-10 stroke-[1.5]" />
               </div>
 
               <div>
                 {/* Rating */}
-                <div className="flex items-center gap-1 text-[#9E3371] mb-4">
+                <div className="flex items-center gap-1 text-[#C2188B] mb-4">
                   {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#9E3371] text-[#9E3371]" />
+                    <Star key={i} className="w-4 h-4 fill-[#C2188B] text-[#C2188B]" />
                   ))}
                 </div>
 
                 {/* Quote text */}
-                <p className="text-sm text-[#9E3371] leading-relaxed italic mb-8 relative z-10">
+                <p className="text-sm text-[#555555] leading-relaxed italic mb-8 relative z-10">
                   "{item.quote}"
                 </p>
               </div>
 
               {/* User details */}
-              <div className="flex items-center gap-4 pt-4 border-t border-[#9E3371]">
+              <div className="flex items-center gap-4 pt-4 border-t border-[#8B1E5C]/15">
                 <img 
                   src={item.avatar} 
                   alt={item.name} 
-                  className="w-12 h-12 rounded-full object-cover ring-2 ring-[#9E3371]"
+                  className="w-12 h-12 rounded-full object-cover ring-2 ring-[#8B1E5C]"
                 />
                 <div>
-                  <h4 className="text-sm font-bold text-[#9E3371]">{item.name}</h4>
-                  <p className="text-xs text-[#9E3371]">{item.role}</p>
+                  <h4 className="text-sm font-bold text-[#6D214F]">{item.name}</h4>
+                  <p className="text-xs text-[#777777]">{item.role}</p>
                 </div>
               </div>
 
