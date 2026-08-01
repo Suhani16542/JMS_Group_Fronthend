@@ -7,9 +7,8 @@ export interface ContactPayload {
 }
 
 const getApiUrl = (): string => {
-  const envUrl = (import.meta as any).env?.NEXT_PUBLIC_API_URL || 
-                 (typeof process !== 'undefined' && process.env?.NEXT_PUBLIC_API_URL);
-  return envUrl || 'http://localhost:5000';
+  const envUrl = import.meta.env.VITE_API_BASE_URL || import.meta.env.NEXT_PUBLIC_API_URL;
+  return envUrl || 'https://jms-group-backend.onrender.com';
 };
 
 export const sendContactApi = async (payload: ContactPayload) => {
