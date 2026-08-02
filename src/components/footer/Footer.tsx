@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from '@/components/common/Logo';
-import { Phone, Mail, MapPin, Clock, Facebook, Linkedin, Instagram, Youtube, Send } from 'lucide-react';
+import { Mail, MapPin, Clock, Facebook, Linkedin, Instagram, Youtube, Send } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -109,16 +109,16 @@ export const Footer: React.FC = () => {
             <h4 className="text-sm font-bold text-[#6D214F] mb-4 border-b border-[#8B1E5C]/30 pb-2 inline-block">CONTACT</h4>
             <ul className="flex flex-col gap-3 text-xs text-[#555555]">
               <li className="flex items-start gap-2.5 group">
-                <Phone className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
-                <a href="tel:+911234567890" className="hover:text-[#C2188B] transition-colors">+91 12345 67890</a>
-              </li>
-              <li className="flex items-start gap-2.5 group">
                 <Mail className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
-                <a href="mailto:info@jmsgroup.com" className="hover:text-[#C2188B] transition-colors">info@jmsgroup.com</a>
+                <a href="mailto:jmsplacement@gmail.com" className="hover:text-[#C2188B] transition-colors">jmsplacement@gmail.com</a>
               </li>
               <li className="flex items-start gap-2.5 group">
                 <MapPin className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
-                <span>123, Business Park, New Delhi, India - 110001</span>
+                <span>
+                  129, 1st Floor, Orbit Mall, Near C21 Mall,<br />
+                  A.B. Road, Vijay Nagar,<br />
+                  Indore, Madhya Pradesh
+                </span>
               </li>
               <li className="flex items-start gap-2.5 group">
                 <Clock className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
