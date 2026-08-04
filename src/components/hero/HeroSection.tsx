@@ -161,7 +161,7 @@ export const HeroSection: React.FC = () => {
                   <Star className="w-4 h-4 sm:w-6 sm:h-6 fill-white text-transparent" />
                 </div>
                 <div>
-                  <div className="text-xl sm:text-3xl font-black text-[#6D214F] leading-none">25+</div>
+                  <div className="text-xl sm:text-3xl font-black text-[#6D214F] leading-none">15+</div>
                   <div className="text-[10px] sm:text-sm text-[#555555] font-semibold mt-0.5 sm:mt-1">Years of Excellence</div>
                   <div className="w-6 sm:w-8 h-0.5 sm:h-1 bg-[#8B1E5C] rounded-full mt-1" />
                 </div>

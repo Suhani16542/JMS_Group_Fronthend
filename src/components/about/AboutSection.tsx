@@ -2,18 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Building2, 
   Users2, 
-  UserCheck2, 
   Briefcase, 
   ArrowRight 
 } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   const stats = [
-    { icon: Building2, label: 'Years Experience', value: '25+' },
     { icon: Users2, label: 'Corporate Clients', value: '500+' },
-    { icon: UserCheck2, label: 'Candidates Placed', value: '10K+' },
     { icon: Briefcase, label: 'Industry Expertise', value: '20+' },
   ];
 
@@ -50,12 +46,6 @@ export const AboutSection: React.FC = () => {
                 />
               </div>
 
-              {/* Stat Overlay Badge */}
-              <div className="absolute -top-6 -left-4 sm:left-2 bg-white text-[#222222] p-5 rounded-[18px] shadow-xl border border-[#8B1E5C]/20 max-w-[200px]">
-                <div className="text-3xl font-extrabold leading-none text-[#8B1E5C]">10K+</div>
-                <div className="text-xs text-[#555555] font-medium mt-1">Candidates Placed Successfully</div>
-              </div>
-
             </div>
           </motion.div>
 
@@ -80,11 +70,11 @@ export const AboutSection: React.FC = () => {
             </p>
 
             <p className="text-sm text-[#777777] leading-relaxed mb-8">
-              With over two decades of industry expertise, our custom recruitment methodologies ensure seamless alignment between candidate aspirations and organizational goals.
+              With over 15+ years of industry expertise, our custom recruitment methodologies ensure seamless alignment between candidate aspirations and organizational goals.
             </p>
 
-            {/* 4 Statistics Grid */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 w-full mb-8">
+            {/* 2 Statistics Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full mb-8">
               {stats.map((stat) => {
                 const Icon = stat.icon;
                 return (

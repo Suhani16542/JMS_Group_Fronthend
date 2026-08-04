@@ -29,7 +29,13 @@ import {
   Smartphone,
   Layers,
   Cloud,
-  CheckCircle
+  CheckCircle,
+  Landmark,
+  Laptop,
+  ShoppingBag,
+  Headset,
+  Factory,
+  Stethoscope
 } from 'lucide-react';
 import { uploadResumeApi } from '../../services/resumeService';
 
@@ -171,60 +177,40 @@ export const JobsPage: React.FC = () => {
 
   const hiringAreas = [
     {
-      title: 'MERN Stack Developer',
-      description: 'Building scalable enterprise web applications, high-performance dashboards, and real-time backend systems.',
-      skills: ['React.js', 'Next.js', 'Node.js', 'Express', 'MongoDB'],
-      experience: '2 - 5 Years',
-      icon: Code,
+      title: 'Banking Sector',
+      description: 'JMS Group regularly recruits for various positions across retail banking, corporate finance, risk management, operations, and loan processing in top banking institutions.',
+      icon: Landmark,
+      tags: ['Banking', 'Finance', 'Operations', 'Risk Mgmt'],
     },
     {
-      title: 'Frontend Developer',
-      description: 'Crafting responsive, pixel-perfect, interactive user interfaces with modern web frameworks and sleek designs.',
-      skills: ['React', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS'],
-      experience: '1 - 4 Years',
-      icon: Layout,
+      title: 'IT Sector',
+      description: 'JMS Group regularly recruits software developers, cloud architects, DevOps engineers, UI/UX designers, IT support specialists, and tech leaders.',
+      icon: Laptop,
+      tags: ['Software', 'QA', 'DevOps', 'Cloud', 'Support'],
     },
     {
-      title: 'Backend Developer',
-      description: 'Designing robust RESTful APIs, microservices, database schemas, and secure data handling mechanisms.',
-      skills: ['Node.js', 'Express.js', 'MongoDB', 'REST APIs', 'JWT'],
-      experience: '2 - 6 Years',
-      icon: Server,
+      title: 'Retail Sector',
+      description: 'JMS Group regularly recruits store managers, inventory specialists, category managers, digital operations staff, and e-commerce logistics teams.',
+      icon: ShoppingBag,
+      tags: ['Sales', 'Warehouse', 'Inventory', 'Merchandising'],
     },
     {
-      title: 'UI/UX Designer',
-      description: 'Designing intuitive user flows, wireframes, high-fidelity prototypes, and sleek modern design systems.',
-      skills: ['Figma', 'Responsive Design', 'User Experience', 'Prototyping'],
-      experience: '1 - 3 Years',
-      icon: Palette,
+      title: 'BPO / Customer Support Sector',
+      description: 'JMS Group regularly recruits inbound/outbound customer support executives, technical support representatives, team leads, and quality analysts.',
+      icon: Headset,
+      tags: ['Customer Support', 'Voice/Non-Voice', 'BPO', 'KPO'],
     },
     {
-      title: 'Digital Marketing Executive',
-      description: 'Driving online presence, targeted ad campaigns, organic SEO ranking, and social media brand growth.',
-      skills: ['SEO', 'Google Ads', 'Social Media Marketing', 'Analytics'],
-      experience: '1 - 3 Years',
-      icon: TrendingUp,
+      title: 'Manufacturing Sector',
+      description: 'JMS Group regularly recruits skilled engineers, plant managers, quality assurance auditors, and supply chain coordinators for top manufacturing units.',
+      icon: Factory,
+      tags: ['Engineering', 'Plant Ops', 'Quality Check', 'Supply Chain'],
     },
     {
-      title: 'HR Recruiter',
-      description: 'Sourcing, screening top talent, managing interview pipelines, and nurturing candidate experience.',
-      skills: ['Talent Acquisition', 'Hiring', 'Employee Engagement', 'Screening'],
-      experience: '1 - 4 Years',
-      icon: Users,
-    },
-    {
-      title: 'Graphic Designer',
-      description: 'Creating high-impact brand collateral, social media banners, vector illustrations, and visual identity kits.',
-      skills: ['Photoshop', 'Illustrator', 'Branding', 'Social Media Designs'],
-      experience: '1 - 3 Years',
-      icon: Paintbrush,
-    },
-    {
-      title: 'Business Development Executive',
-      description: 'Building B2B client relationships, generating high-quality sales leads, and expanding corporate partnerships.',
-      skills: ['Client Communication', 'Lead Generation', 'Sales Pitching', 'CRM'],
-      experience: '1 - 5 Years',
-      icon: Building2,
+      title: 'Healthcare Sector',
+      description: 'JMS Group regularly recruits qualified healthcare professionals, clinical staff, medical administration personnel, and lab specialists for leading hospitals and clinics.',
+      icon: Stethoscope,
+      tags: ['Clinical', 'Medical Admin', 'Lab Specs', 'Nursing'],
     },
   ];
 
@@ -393,6 +379,19 @@ export const JobsPage: React.FC = () => {
 
                 <div className="w-full h-px bg-[#8B1E5C]/15 mb-6" />
 
+                {/* Direct Helpline Badge */}
+                <div className="mb-6 p-3.5 rounded-xl bg-white border border-[#8B1E5C]/20 shadow-xs flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#7A1F4D] to-[#C2188B] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <Phone className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold uppercase text-[#8B1E5C] tracking-wider">Recruitment Helpline</div>
+                    <a href="tel:+918349608102" className="text-xs sm:text-sm font-extrabold text-[#6D214F] hover:text-[#C2188B] transition-colors">
+                      +91 83496 08102
+                    </a>
+                  </div>
+                </div>
+
                 {/* 6 Feature Points */}
                 <div className="space-y-4">
                   {whatWeDoPoints.map((item) => {
@@ -443,56 +442,58 @@ export const JobsPage: React.FC = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.05 }}
-                      className="p-6 sm:p-7 rounded-[22px] bg-white border border-[#8B1E5C]/15 shadow-sm hover:border-[#8B1E5C]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+                      className="p-6 sm:p-7 rounded-[22px] bg-white border border-[#8B1E5C]/15 shadow-md hover:border-[#8B1E5C]/40 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
                     >
-                      {/* Top Accent Pill */}
+                      {/* Top Accent Highlight Line */}
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] opacity-80 group-hover:opacity-100 transition-opacity" />
+
+                      {/* Header & Icon */}
                       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#7A1F4D] to-[#C2188B] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
-                            <AreaIcon className="w-5 h-5 text-white" />
+                        <div className="flex items-center gap-3.5">
+                          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#7A1F4D] to-[#C2188B] text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                            <AreaIcon className="w-6 h-6 text-white" />
                           </div>
                           <div>
                             <h3 className="text-lg sm:text-xl font-extrabold text-[#6D214F] group-hover:text-[#8B1E5C] transition-colors">
                               {area.title}
                             </h3>
-                            <span className="text-[11px] font-semibold text-[#8B1E5C] bg-[#FAF8FB] px-2.5 py-0.5 rounded-full border border-[#8B1E5C]/20 inline-block mt-0.5">
-                              Exp: {area.experience}
+                            <span className="text-[11px] font-semibold text-[#8B1E5C]">
+                              Recruitment Opportunities
                             </span>
                           </div>
                         </div>
 
-                        <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200 flex items-center gap-1.5">
+                        <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200 flex items-center gap-1.5 shadow-xs">
                           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                           Actively Hiring
                         </span>
                       </div>
 
                       {/* Description */}
-                      <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-4 font-normal">
+                      <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-5 font-normal">
                         {area.description}
                       </p>
 
-                      {/* Required Skills Badges */}
-                      <div className="mb-6">
-                        <div className="text-[11px] font-bold uppercase text-[#6D214F] tracking-wider mb-2">Required Skills:</div>
+                      {/* Sector Skill / Specialization Tags */}
+                      <div className="mb-5">
                         <div className="flex flex-wrap gap-1.5">
-                          {area.skills.map((skill) => (
+                          {area.tags.map((tag) => (
                             <span 
-                              key={skill} 
-                              className="px-2.5 py-1 rounded-lg bg-[#FAF8FB] text-[#6D214F] text-xs font-medium border border-[#8B1E5C]/15"
+                              key={tag} 
+                              className="px-3 py-1 rounded-full bg-[#FAF8FB] text-[#6D214F] text-xs font-semibold border border-[#8B1E5C]/20 shadow-xs"
                             >
-                              {skill}
+                              {tag}
                             </span>
                           ))}
                         </div>
                       </div>
 
                       {/* Action Button */}
-                      <div className="pt-4 border-t border-[#8B1E5C]/10 flex items-center justify-between">
-                        <span className="text-xs text-[#555555]">Full-time / Remote & Hybrid options</span>
+                      <div className="pt-4 border-t border-[#8B1E5C]/10 flex items-center justify-between gap-4">
+                        <span className="text-xs text-[#555555] font-medium hidden sm:inline">Regular & Executive Recruitment</span>
                         <button
                           onClick={() => openUploadModal(area.title)}
-                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-white/20 cursor-pointer"
+                          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-white/20 cursor-pointer ml-auto sm:ml-0"
                         >
                           <span>Upload Resume</span>
                           <Upload className="w-3.5 h-3.5 text-white" />

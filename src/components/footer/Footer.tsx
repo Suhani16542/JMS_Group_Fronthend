@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Logo } from '@/components/common/Logo';
-import { Mail, MapPin, Clock, Facebook, Linkedin, Instagram, Youtube, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Facebook, Linkedin, Instagram, Youtube, Send } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const location = useLocation();
@@ -116,6 +116,10 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-2.5 group">
                 <Mail className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
                 <a href="mailto:jmsplacement@gmail.com" className="hover:text-[#C2188B] transition-colors">jmsplacement@gmail.com</a>
+              </li>
+              <li className="flex items-start gap-2.5 group">
+                <Phone className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
+                <a href="tel:+918349608102" className="hover:text-[#C2188B] transition-colors">+91 83496 08102</a>
               </li>
               <li className="flex items-start gap-2.5 group">
                 <MapPin className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />

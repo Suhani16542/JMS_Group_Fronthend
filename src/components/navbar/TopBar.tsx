@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Clock, Facebook, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Mail, Phone, Clock, Facebook, Linkedin, Instagram, Youtube } from 'lucide-react';
 
 export const TopBar: React.FC = () => {
   return (
@@ -7,6 +7,16 @@ export const TopBar: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
         {/* Left: Contact Info */}
         <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-white font-medium">
+          <a
+            href="tel:+918349608102"
+            className="flex items-center gap-2 hover:text-[#FAF8FB] transition-colors"
+          >
+            <Phone className="w-3.5 h-3.5 text-white" />
+            <span className="tracking-wide text-white">+91 83496 08102</span>
+          </a>
+
+          <div className="h-3.5 w-[1px] bg-white/30" />
+
           <a
             href="mailto:jmsplacement@gmail.com"
             className="flex items-center gap-2 hover:text-[#FAF8FB] transition-colors"

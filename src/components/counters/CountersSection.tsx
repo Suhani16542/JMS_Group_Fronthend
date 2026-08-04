@@ -1,19 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Building2, Award, Layers } from 'lucide-react';
+import { Building2, Award, Layers } from 'lucide-react';
 
 export const CountersSection: React.FC = () => {
   const stats = [
-    { icon: Users, count: '10,000+', label: 'Candidates Placed' },
     { icon: Building2, count: '500+', label: 'Corporate Clients' },
-    { icon: Award, count: '25+', label: 'Years Experience' },
+    { icon: Award, count: '15+', label: 'Years Experience' },
     { icon: Layers, count: '20+', label: 'Industries Served' },
   ];
 
   return (
     <section className="py-16 bg-gradient-to-r from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] text-white relative overflow-hidden shadow-lg border-t border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-white/20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-white/20">
           {stats.map((item, index) => {
             const Icon = item.icon;
             return (
