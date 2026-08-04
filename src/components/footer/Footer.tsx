@@ -1,40 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Logo } from '@/components/common/Logo';
 import { Mail, MapPin, Clock, Facebook, Linkedin, Instagram, Youtube, Send } from 'lucide-react';
 
 export const Footer: React.FC = () => {
+  const location = useLocation();
+  const hideNewsletter = location.pathname === '/jobs' || location.pathname === '/recent-openings';
+
   return (
     <footer className="bg-[#FAF8FB] text-[#222222] pt-16 pb-8 border-t-2 border-[#8B1E5C]/20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
         {/* Newsletter / Stay Connected Strip */}
-        <div className="mb-14 p-8 sm:p-10 rounded-[18px] bg-white border border-[#8B1E5C]/20 shadow-xl relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            <div className="lg:col-span-7">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#8B1E5C] mb-1 block">STAY CONNECTED WITH JMS GROUP</span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#6D214F] mb-2">Get Jobs & HR Insights in Your Inbox</h3>
-              <p className="text-xs sm:text-sm text-[#555555]">Subscribe to receive curated corporate openings, career guidance, and HR trends directly.</p>
-            </div>
-            <div className="lg:col-span-5">
-              <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email..."
-                  required
-                  className="w-full px-5 py-3.5 rounded-full bg-[#FAF8FB] text-[#222222] placeholder-[#777777] text-xs sm:text-sm focus:outline-none border border-[#8B1E5C]/30 focus:border-[#8B1E5C]"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] shadow-md flex items-center justify-center gap-2 hover:shadow-[0_8px_25px_rgba(194,24,139,0.4)] hover:-translate-y-0.5 transition-all flex-shrink-0"
-                >
-                  <span>Subscribe</span>
-                  <Send className="w-3.5 h-3.5" />
-                </button>
-              </form>
+        {!hideNewsletter && (
+          <div className="mb-14 p-8 sm:p-10 rounded-[18px] bg-white border border-[#8B1E5C]/20 shadow-xl relative overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="lg:col-span-7">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#8B1E5C] mb-1 block">STAY CONNECTED WITH JMS GROUP</span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#6D214F] mb-2">Get Jobs & HR Insights in Your Inbox</h3>
+                <p className="text-xs sm:text-sm text-[#555555]">Subscribe to receive curated corporate openings, career guidance, and HR trends directly.</p>
+              </div>
+              <div className="lg:col-span-5">
+                <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email..."
+                    required
+                    className="w-full px-5 py-3.5 rounded-full bg-[#FAF8FB] text-[#222222] placeholder-[#777777] text-xs sm:text-sm focus:outline-none border border-[#8B1E5C]/30 focus:border-[#8B1E5C]"
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] shadow-md flex items-center justify-center gap-2 hover:shadow-[0_8px_25px_rgba(194,24,139,0.4)] hover:-translate-y-0.5 transition-all flex-shrink-0"
+                  >
+                    <span>Subscribe</span>
+                    <Send className="w-3.5 h-3.5" />
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Main Footer Columns Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-[#8B1E5C]/15">

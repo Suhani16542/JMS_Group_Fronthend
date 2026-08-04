@@ -141,11 +141,11 @@ export const HeroSection: React.FC = () => {
                 <img
                   src={teamImageUrl}
                   alt="Corporate Recruitment Team - JMS Group"
-                  className="w-full h-[260px] xs:h-[300px] sm:h-[380px] lg:h-[450px] object-cover rounded-l-[54px] sm:rounded-l-[132px] lg:rounded-l-[170px] rounded-r-[20px] sm:rounded-r-[30px]"
+                  className="w-full h-[240px] xs:h-[300px] sm:h-[380px] lg:h-[450px] object-cover rounded-l-[54px] sm:rounded-l-[132px] lg:rounded-l-[170px] rounded-r-[20px] sm:rounded-r-[30px]"
                 />
 
                 {/* Bottom-Right Curved Ribbon Accent */}
-                <div className="absolute -bottom-2 -right-2 w-48 xs:w-60 sm:w-80 lg:w-96 h-28 xs:h-32 sm:h-40 lg:h-44 bg-gradient-to-tl from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] rounded-tl-[100%] border-t-2 border-l-2 border-white shadow-xl overflow-hidden pointer-events-none flex items-end justify-end p-4">
+                <div className="absolute -bottom-2 -right-2 w-36 xs:w-60 sm:w-80 lg:w-96 h-20 xs:h-32 sm:h-40 lg:h-44 bg-gradient-to-tl from-[#7A1F4D] via-[#8B1E5C] to-[#C2188B] rounded-tl-[100%] border-t-2 border-l-2 border-white shadow-xl overflow-hidden pointer-events-none flex items-end justify-end p-4">
                 </div>
 
               </div>
