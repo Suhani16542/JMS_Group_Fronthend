@@ -131,7 +131,10 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-start gap-2.5 group">
                 <Clock className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
-                <span>Mon - Sat: 9:30 AM - 6:30 PM</span>
+                <div className="flex flex-col gap-1">
+                  <span><strong>Office Time:</strong> Mon – Sat: 10:00 AM – 5:30 PM</span>
+                  <span><strong>Meeting Time:</strong> Mon – Sat: 11:00 AM – 4:00 PM</span>
+                </div>
               </li>
             </ul>
           </div>
