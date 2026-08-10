@@ -2,6 +2,8 @@ export interface ResumePayload {
   fullName: string;
   email: string;
   phone: string;
+  referenceNumber: string;
+  referenceName: string;
   highestQualification?: string;
   experience?: string;
   preferredJobRole?: string;
@@ -20,6 +22,8 @@ export const uploadResumeApi = async (payload: ResumePayload) => {
   formData.append('fullName', payload.fullName);
   formData.append('email', payload.email);
   formData.append('phone', payload.phone);
+  formData.append('referenceNumber', payload.referenceNumber);
+  formData.append('referenceName', payload.referenceName);
   if (payload.highestQualification) {
     formData.append('highestQualification', payload.highestQualification);
   }

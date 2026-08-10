@@ -35,7 +35,8 @@ import {
   ShoppingBag,
   Headset,
   Factory,
-  Stethoscope
+  Stethoscope,
+  Hash
 } from 'lucide-react';
 import { uploadResumeApi } from '../../services/resumeService';
 
@@ -50,6 +51,8 @@ export const JobsPage: React.FC = () => {
     fullName: '',
     email: '',
     phone: '',
+    referenceNumber: '',
+    referenceName: '',
     qualification: '',
     experience: '',
     preferredRole: '',
@@ -116,6 +119,14 @@ export const JobsPage: React.FC = () => {
       setValidationError('Phone Number is required.');
       return;
     }
+    if (!formData.referenceNumber.trim()) {
+      setValidationError('Reference Number is required.');
+      return;
+    }
+    if (!formData.referenceName.trim()) {
+      setValidationError('Reference Name is required.');
+      return;
+    }
     if (!formData.qualification.trim()) {
       setValidationError('Highest Qualification is required.');
       return;
@@ -144,6 +155,8 @@ export const JobsPage: React.FC = () => {
         fullName: formData.fullName.trim(),
         email: formData.email.trim(),
         phone: formData.phone.trim(),
+        referenceNumber: formData.referenceNumber.trim(),
+        referenceName: formData.referenceName.trim(),
         highestQualification: formData.qualification.trim(),
         experience: formData.experience,
         preferredJobRole: formData.preferredRole.trim(),
@@ -155,6 +168,8 @@ export const JobsPage: React.FC = () => {
         fullName: '',
         email: '',
         phone: '',
+        referenceNumber: '',
+        referenceName: '',
         qualification: '',
         experience: '',
         preferredRole: '',
@@ -681,21 +696,6 @@ export const JobsPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-[#6D214F] mb-1.5">Email Address *</label>
-                      <div className="relative">
-                        <Mail className="w-4 h-4 text-[#8B1E5C] absolute left-4 top-1/2 -translate-y-1/2" />
-                        <input
-                          type="email"
-                          required
-                          placeholder="priya@example.com"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-[#FAF8FB] border border-[#8B1E5C]/20 text-xs sm:text-sm text-[#6D214F] placeholder-[#555555]/50 focus:outline-none focus:border-[#8B1E5C] transition-colors"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
                       <label className="block text-xs font-bold text-[#6D214F] mb-1.5">Phone Number *</label>
                       <div className="relative">
                         <Phone className="w-4 h-4 text-[#8B1E5C] absolute left-4 top-1/2 -translate-y-1/2" />
@@ -705,6 +705,51 @@ export const JobsPage: React.FC = () => {
                           placeholder="+91 98765 43210"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-[#FAF8FB] border border-[#8B1E5C]/20 text-xs sm:text-sm text-[#6D214F] placeholder-[#555555]/50 focus:outline-none focus:border-[#8B1E5C] transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-[#6D214F] mb-1.5">Reference Name *</label>
+                      <div className="relative">
+                        <User className="w-4 h-4 text-[#8B1E5C] absolute left-4 top-1/2 -translate-y-1/2" />
+                        <input
+                          type="text"
+                          required
+                          placeholder="Enter Reference Name"
+                          value={formData.referenceName}
+                          onChange={(e) => setFormData({ ...formData, referenceName: e.target.value })}
+                          className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-[#FAF8FB] border border-[#8B1E5C]/20 text-xs sm:text-sm text-[#6D214F] placeholder-[#555555]/50 focus:outline-none focus:border-[#8B1E5C] transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-[#6D214F] mb-1.5">Reference Number *</label>
+                      <div className="relative">
+                        <Phone className="w-4 h-4 text-[#8B1E5C] absolute left-4 top-1/2 -translate-y-1/2" />
+                        <input
+                          type="text"
+                          required
+                          placeholder="Enter Reference Number"
+                          value={formData.referenceNumber}
+                          onChange={(e) => setFormData({ ...formData, referenceNumber: e.target.value })}
+                          className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-[#FAF8FB] border border-[#8B1E5C]/20 text-xs sm:text-sm text-[#6D214F] placeholder-[#555555]/50 focus:outline-none focus:border-[#8B1E5C] transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-[#6D214F] mb-1.5">Email Address *</label>
+                      <div className="relative">
+                        <Mail className="w-4 h-4 text-[#8B1E5C] absolute left-4 top-1/2 -translate-y-1/2" />
+                        <input
+                          type="email"
+                          required
+                          placeholder="priya@example.com"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-[#FAF8FB] border border-[#8B1E5C]/20 text-xs sm:text-sm text-[#6D214F] placeholder-[#555555]/50 focus:outline-none focus:border-[#8B1E5C] transition-colors"
                         />
                       </div>

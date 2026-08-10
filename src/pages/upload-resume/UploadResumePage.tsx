@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Upload, CheckCircle2, Send, FileText, User, Mail, Phone, MapPin, Briefcase, Loader2, AlertCircle } from 'lucide-react';
+import { Upload, CheckCircle2, Send, FileText, User, Mail, Phone, MapPin, Briefcase, Loader2, AlertCircle, Hash } from 'lucide-react';
 import { uploadResumeApi } from '../../services/resumeService';
 
 export const UploadResumePage: React.FC = () => {
@@ -9,6 +9,8 @@ export const UploadResumePage: React.FC = () => {
     fullName: '',
     email: '',
     phone: '',
+    referenceNumber: '',
+    referenceName: '',
     qualification: '',
     experience: '',
     preferredRole: '',
@@ -60,6 +62,14 @@ export const UploadResumePage: React.FC = () => {
       setValidationError('Phone Number is required.');
       return;
     }
+    if (!formData.referenceNumber.trim()) {
+      setValidationError('Reference Number is required.');
+      return;
+    }
+    if (!formData.referenceName.trim()) {
+      setValidationError('Reference Name is required.');
+      return;
+    }
     if (!formData.qualification.trim()) {
       setValidationError('Highest Qualification is required.');
       return;
@@ -88,6 +98,8 @@ export const UploadResumePage: React.FC = () => {
         fullName: formData.fullName.trim(),
         email: formData.email.trim(),
         phone: formData.phone.trim(),
+        referenceNumber: formData.referenceNumber.trim(),
+        referenceName: formData.referenceName.trim(),
         highestQualification: formData.qualification.trim(),
         experience: formData.experience,
         preferredJobRole: formData.preferredRole.trim(),
@@ -99,6 +111,8 @@ export const UploadResumePage: React.FC = () => {
         fullName: '',
         email: '',
         phone: '',
+        referenceNumber: '',
+        referenceName: '',
         qualification: '',
         experience: '',
         preferredRole: '',
@@ -184,21 +198,6 @@ export const UploadResumePage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#9E3371] mb-2">Email Address *</label>
-                    <div className="relative">
-                      <Mail className="w-4 h-4 text-[#9E3371] absolute left-4 top-1/2 -translate-y-1/2" />
-                      <input
-                        type="email"
-                        required
-                        placeholder="priya@example.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full pl-11 pr-4 py-3 rounded-2xl bg-white border border-[#9E3371] text-sm text-[#9E3371] placeholder-[#9E3371]/60 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
                     <label className="block text-xs font-bold text-[#9E3371] mb-2">Phone Number *</label>
                     <div className="relative">
                       <Phone className="w-4 h-4 text-[#9E3371] absolute left-4 top-1/2 -translate-y-1/2" />
@@ -208,6 +207,51 @@ export const UploadResumePage: React.FC = () => {
                         placeholder="+91 98765 43210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full pl-11 pr-4 py-3 rounded-2xl bg-white border border-[#9E3371] text-sm text-[#9E3371] placeholder-[#9E3371]/60 focus:outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-[#9E3371] mb-2">Reference Name *</label>
+                    <div className="relative">
+                      <User className="w-4 h-4 text-[#9E3371] absolute left-4 top-1/2 -translate-y-1/2" />
+                      <input
+                        type="text"
+                        required
+                        placeholder="Enter Reference Name"
+                        value={formData.referenceName}
+                        onChange={(e) => setFormData({ ...formData, referenceName: e.target.value })}
+                        className="w-full pl-11 pr-4 py-3 rounded-2xl bg-white border border-[#9E3371] text-sm text-[#9E3371] placeholder-[#9E3371]/60 focus:outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-[#9E3371] mb-2">Reference Number *</label>
+                    <div className="relative">
+                      <Phone className="w-4 h-4 text-[#9E3371] absolute left-4 top-1/2 -translate-y-1/2" />
+                      <input
+                        type="text"
+                        required
+                        placeholder="Enter Reference Number"
+                        value={formData.referenceNumber}
+                        onChange={(e) => setFormData({ ...formData, referenceNumber: e.target.value })}
+                        className="w-full pl-11 pr-4 py-3 rounded-2xl bg-white border border-[#9E3371] text-sm text-[#9E3371] placeholder-[#9E3371]/60 focus:outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-[#9E3371] mb-2">Email Address *</label>
+                    <div className="relative">
+                      <Mail className="w-4 h-4 text-[#9E3371] absolute left-4 top-1/2 -translate-y-1/2" />
+                      <input
+                        type="email"
+                        required
+                        placeholder="priya@example.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full pl-11 pr-4 py-3 rounded-2xl bg-white border border-[#9E3371] text-sm text-[#9E3371] placeholder-[#9E3371]/60 focus:outline-none"
                       />
                     </div>
