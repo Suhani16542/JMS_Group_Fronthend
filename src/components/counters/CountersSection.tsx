@@ -6,7 +6,7 @@ export const CountersSection: React.FC = () => {
   const stats = [
     { icon: Building2, count: '500+', label: 'Corporate Clients' },
     { icon: Award, count: '15+', label: 'Years Experience' },
-    { icon: Layers, count: '20+', label: 'Industries Served' },
+    { icon: Layers, count: '15+', label: 'Industries Served' },
   ];
 
   return (

@@ -127,6 +127,16 @@ export const ContactPage: React.FC = () => {
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-[#9E3371] text-white flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-[#9E3371] uppercase tracking-wide">Phone Number</h4>
+                    <a href="tel:07314991624" className="text-sm font-bold text-[#9E3371] hover:underline transition-colors">0731-4991624</a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[#9E3371] text-white flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>

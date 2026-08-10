@@ -401,8 +401,8 @@ export const JobsPage: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[10px] font-bold uppercase text-[#8B1E5C] tracking-wider">Recruitment Helpline</div>
-                    <a href="tel:+918349608102" className="text-xs sm:text-sm font-extrabold text-[#6D214F] hover:text-[#C2188B] transition-colors">
-                      +91 83496 08102
+                    <a href="tel:07314991624" className="text-xs sm:text-sm font-extrabold text-[#6D214F] hover:text-[#C2188B] transition-colors">
+                      0731-4991624
                     </a>
                   </div>
                 </div>

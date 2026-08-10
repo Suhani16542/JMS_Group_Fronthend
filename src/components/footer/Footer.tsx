@@ -119,7 +119,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-start gap-2.5 group">
                 <Phone className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
-                <a href="tel:+918349608102" className="hover:text-[#C2188B] transition-colors">+91 83496 08102</a>
+                <a href="tel:07314991624" className="hover:text-[#C2188B] transition-colors">0731-4991624</a>
               </li>
               <li className="flex items-start gap-2.5 group">
                 <MapPin className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />

@@ -10,7 +10,7 @@ import {
 export const AboutSection: React.FC = () => {
   const stats = [
     { icon: Users2, label: 'Corporate Clients', value: '500+' },
-    { icon: Briefcase, label: 'Industry Expertise', value: '20+' },
+    { icon: Briefcase, label: 'Industry Expertise', value: '15+' },
   ];
 
   return (

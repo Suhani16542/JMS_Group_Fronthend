@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 export const AboutPage: React.FC = () => {
   const stats = [
-    { label: 'Years Experience', value: '25+' },
+    { label: 'Years Experience', value: '15+' },
     { label: 'Corporate Clients', value: '500+' },
     { label: 'Candidates Placed', value: '10,000+' },
-    { label: 'Industries Served', value: '20+' },
+    { label: 'Industries Served', value: '15+' },
   ];
 
   const values = [
@@ -54,7 +54,7 @@ export const AboutPage: React.FC = () => {
   ];
 
   const faqs = [
-    { q: 'What makes JMS Group different from traditional staffing agencies?', a: 'JMS Group combines 25+ years of recruitment expertise with 1-on-1 candidate counseling and specialized HR consulting frameworks tailored for corporate client growth.' },
+    { q: 'What makes JMS Group different from traditional staffing agencies?', a: 'JMS Group combines 15+ years of recruitment expertise with 1-on-1 candidate counseling and specialized HR consulting frameworks tailored for corporate client growth.' },
     { q: 'How long does the candidate placement process take?', a: 'For corporate clients, pre-screened shortlists are presented within 48 to 72 hours. Candidate placements typically complete within 10 to 14 business days.' },
     { q: 'Does JMS Group charge candidates for job placement services?', a: 'No, our placement services are completely free for candidates. We never charge registration fees, interview guidance fees, or placement commissions.' },
   ];
@@ -80,7 +80,7 @@ export const AboutPage: React.FC = () => {
               </span>
             </h1>
             <p className="text-base sm:text-lg text-[#9E3371] leading-relaxed">
-              JMS Group is a premier recruitment, placement, HR consulting, and career guidance organization with a 25+ year legacy of excellence.
+              JMS Group is a premier recruitment, placement, HR consulting, and career guidance organization with a 15+ year legacy of excellence.
             </p>
           </motion.div>
         </div>

@@ -8,7 +8,7 @@ export const TeamPage: React.FC = () => {
     {
       name: 'Rajesh Sharma',
       role: 'Founder & Managing Director',
-      bio: '25+ years in corporate executive recruitment, human resource strategy, and organizational growth.',
+      bio: '15+ years in corporate executive recruitment, human resource strategy, and organizational growth.',
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop',
     },
     {

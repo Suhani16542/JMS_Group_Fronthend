@@ -8,11 +8,11 @@ export const TopBar: React.FC = () => {
         {/* Left: Contact Info */}
         <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-white font-medium">
           <a
-            href="tel:+918349608102"
+            href="tel:07314991624"
             className="flex items-center gap-2 hover:text-[#FAF8FB] transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-white" />
-            <span className="tracking-wide text-white">+91 83496 08102</span>
+            <span className="tracking-wide text-white">0731-4991624</span>
           </a>
 
           <div className="h-3.5 w-[1px] bg-white/30" />
@@ -29,7 +29,7 @@ export const TopBar: React.FC = () => {
 
           <div className="hidden md:flex items-center gap-2">
             <Clock className="w-3.5 h-3.5 text-white" />
-            <span className="tracking-wide text-white/90">Mon - Sat: 9:00 AM - 7:00 PM</span>
+            <span className="tracking-wide text-white/90">Mon – Sat: 10:00 AM – 5:30 PM</span>
           </div>
         </div>
 

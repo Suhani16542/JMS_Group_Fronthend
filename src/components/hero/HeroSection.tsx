@@ -150,7 +150,7 @@ export const HeroSection: React.FC = () => {
 
               </div>
 
-              {/* Floating Statistics Card - 25+ Years of Excellence */}
+              {/* Floating Statistics Card - 15+ Years of Excellence */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
