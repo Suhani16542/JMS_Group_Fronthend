@@ -115,7 +115,7 @@ export const Footer: React.FC = () => {
             <ul className="flex flex-col gap-3 text-xs text-[#555555]">
               <li className="flex items-start gap-2.5 group">
                 <Mail className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
-                <a href="mailto:jmsplacement@gmail.com" className="hover:text-[#C2188B] transition-colors">jmsplacement@gmail.com</a>
+                <a href="mailto:jmspurvi@gmail.com" className="hover:text-[#C2188B] transition-colors">jmspurvi@gmail.com</a>
               </li>
               <li className="flex items-start gap-2.5 group">
                 <Phone className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
@@ -132,8 +132,8 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-2.5 group">
                 <Clock className="w-4 h-4 text-[#8B1E5C] mt-0.5 flex-shrink-0 group-hover:text-[#C2188B] transition-colors" />
                 <div className="flex flex-col gap-1">
-                  <span><strong>Office Time:</strong> Mon – Sat: 10:00 AM – 5:30 PM</span>
-                  <span><strong>Meeting Time:</strong> Mon – Sat: 11:00 AM – 4:00 PM</span>
+                  <span><strong>Office Time:</strong> Mon – Sat: 10:00 AM – 5:00 PM</span>
+                  <span><strong>Meeting Time:</strong> Mon – Fri: 11:00 AM – 4:00 PM</span>
                 </div>
               </li>
             </ul>

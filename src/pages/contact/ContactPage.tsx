@@ -121,7 +121,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-[#9E3371] uppercase tracking-wide">Email Address</h4>
-                    <a href="mailto:jmsplacement@gmail.com" className="text-sm font-bold text-[#9E3371] hover:underline transition-colors">jmsplacement@gmail.com</a>
+                    <a href="mailto:jmspurvi@gmail.com" className="text-sm font-bold text-[#9E3371] hover:underline transition-colors">jmspurvi@gmail.com</a>
                   </div>
                 </div>
 
@@ -155,7 +155,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-[#9E3371] uppercase tracking-wide">Working Hours</h4>
-                    <p className="text-sm font-semibold text-[#9E3371]">Monday - Saturday: 9:30 AM - 6:30 PM</p>
+                    <p className="text-sm font-semibold text-[#9E3371]">Monday - Saturday: 10:00 AM - 5:00 PM</p>
                   </div>
                 </div>
 

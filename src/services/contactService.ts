@@ -4,6 +4,12 @@ export interface ContactPayload {
   phone: string;
   subject: string;
   message: string;
+  referralNumber?: string;
+  referralName?: string;
+  referenceNumber?: string;
+  referenceName?: string;
+  counselingTopic?: string;
+  [key: string]: any;
 }
 
 const getApiUrl = (): string => {

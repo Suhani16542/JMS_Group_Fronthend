@@ -74,9 +74,9 @@ export const ServicesPage: React.FC = () => {
   ];
 
   const industriesSupported = [
+    'Banking, Financial Services & Insurance',
     'Information Technology & Software',
     'Manufacturing & Heavy Engineering',
-    'Banking, Financial Services & Insurance',
     'Healthcare & Pharmaceuticals',
     'Retail & Supply Chain Logistics',
     'Education & Corporate Training',

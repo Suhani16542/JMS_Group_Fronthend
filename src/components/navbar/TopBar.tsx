@@ -18,18 +18,18 @@ export const TopBar: React.FC = () => {
           <div className="h-3.5 w-[1px] bg-white/30" />
 
           <a
-            href="mailto:jmsplacement@gmail.com"
+            href="mailto:jmspurvi@gmail.com"
             className="flex items-center gap-2 hover:text-[#FAF8FB] transition-colors"
           >
             <Mail className="w-3.5 h-3.5 text-white" />
-            <span className="tracking-wide text-white">jmsplacement@gmail.com</span>
+            <span className="tracking-wide text-white">jmspurvi@gmail.com</span>
           </a>
 
           <div className="hidden md:block h-3.5 w-[1px] bg-white/30" />
 
           <div className="hidden md:flex items-center gap-2">
             <Clock className="w-3.5 h-3.5 text-white" />
-            <span className="tracking-wide text-white/90">Mon – Sat: 10:00 AM – 5:30 PM</span>
+            <span className="tracking-wide text-white/90">Mon – Sat: 10:00 AM – 5:00 PM</span>
           </div>
         </div>
 

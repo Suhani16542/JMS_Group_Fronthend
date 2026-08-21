@@ -34,9 +34,9 @@ export const PlacementServicesPage: React.FC = () => {
   ];
 
   const industries = [
+    'Banking, Financial Services & Insurance',
     'Information Technology & Software',
     'Manufacturing & Heavy Engineering',
-    'Banking, Financial Services & Insurance',
     'Healthcare & Pharmaceuticals',
     'Retail & FMCG Supply Chain',
     'Telecommunication & Media',

@@ -1,21 +1,83 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Compass, FileText, UserCheck, MessageSquare, Send, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Compass, FileText, UserCheck, MessageSquare, Send, CheckCircle2, ArrowRight, Loader2, AlertCircle } from 'lucide-react';
+import { sendContactApi } from '../../services/contactService';
 
 export const CareerCounsellingPage: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
+    referralNumber: '',
+    referralName: '',
     experience: '',
     counselingTopic: 'Resume Review & ATS Optimization',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [validationError, setValidationError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = (): boolean => {
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      setValidationError('Full Name is required and must be at least 2 characters long.');
+      return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
+      setValidationError('A valid email address is required.');
+      return false;
+    }
+    const phoneDigits = formData.phone.replace(/\D/g, '');
+    if (!formData.phone.trim() || phoneDigits.length < 10) {
+      setValidationError('Phone number is required and must contain at least 10 digits.');
+      return false;
+    }
+    setValidationError(null);
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setErrorMessage(null);
+    setValidationError(null);
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const fullMessage = [
+        `1-on-1 Career Counseling Request`,
+        `Selected Topic: ${formData.counselingTopic}`,
+        formData.referralName.trim() ? `Referral Name: ${formData.referralName.trim()}` : '',
+        formData.referralNumber.trim() ? `Referral Number: ${formData.referralNumber.trim()}` : '',
+        formData.message.trim() ? `Candidate Note: ${formData.message.trim()}` : 'Note: Candidate requested a 1-on-1 counseling session.',
+      ].filter(Boolean).join('\n');
+
+      const response = await sendContactApi({
+        fullName: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        subject: `1-on-1 Career Counseling: ${formData.counselingTopic}`,
+        message: fullMessage,
+        referralNumber: formData.referralNumber.trim(),
+        referralName: formData.referralName.trim(),
+        counselingTopic: formData.counselingTopic,
+      });
+
+      setSuccessMessage(response?.message || 'Counseling request submitted successfully!');
+      setSubmitted(true);
+    } catch (err: any) {
+      // Do NOT show success on failure. Display actual error message and keep entered form data.
+      setErrorMessage(err?.message || 'Failed to submit counseling inquiry. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const services = [
@@ -91,15 +153,49 @@ export const CareerCounsellingPage: React.FC = () => {
               <p className="text-xs text-[#9E3371] mb-6">Fill out the details below and our senior career counselor will contact you within 24 hours.</p>
 
               {submitted ? (
-                <div className="p-6 rounded-2xl bg-[#9E3371] text-white flex items-center gap-3">
-                  <CheckCircle2 className="w-6 h-6 flex-shrink-0 text-white" />
-                  <div>
-                    <h4 className="font-bold text-sm text-white">Counseling Request Received!</h4>
-                    <p className="text-xs text-white mt-0.5">Thank you, {formData.name}. Our career expert will reach out to you shortly.</p>
+                <div className="p-6 rounded-2xl bg-[#9E3371] text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="w-6 h-6 flex-shrink-0 text-white" />
+                    <div>
+                      <h4 className="font-bold text-sm text-white">Counseling Request Received!</h4>
+                      <p className="text-xs text-white mt-0.5">{successMessage || `Thank you, ${formData.name}. Our career expert will reach out to you shortly.`}</p>
+                    </div>
                   </div>
+                  <button
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({
+                        name: '',
+                        email: '',
+                        phone: '',
+                        referralNumber: '',
+                        referralName: '',
+                        experience: '',
+                        counselingTopic: 'Resume Review & ATS Optimization',
+                        message: '',
+                      });
+                    }}
+                    className="px-4 py-2 rounded-xl bg-white text-[#9E3371] font-bold text-xs hover:bg-gray-100 transition-colors shrink-0 cursor-pointer"
+                  >
+                    Book Another Session
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {validationError && (
+                    <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
+                      <span>{validationError}</span>
+                    </div>
+                  )}
+
+                  {errorMessage && (
+                    <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
+
                   <div>
                     <label className="block text-xs font-bold text-[#9E3371] mb-1.5">Full Name</label>
                     <input
@@ -137,6 +233,29 @@ export const CareerCounsellingPage: React.FC = () => {
                     </div>
                   </div>
 
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-[#9E3371] mb-1.5">Referral Name</label>
+                      <input
+                        type="text"
+                        placeholder="e.g. Referral Person Name"
+                        value={formData.referralName}
+                        onChange={(e) => setFormData({ ...formData, referralName: e.target.value })}
+                        className="w-full px-4 py-3 rounded-2xl bg-white border border-[#9E3371] text-sm text-[#9E3371] placeholder-[#9E3371]/60 focus:outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-[#9E3371] mb-1.5">Referral Number</label>
+                      <input
+                        type="text"
+                        placeholder="e.g. REF-1029 or Contact No."
+                        value={formData.referralNumber}
+                        onChange={(e) => setFormData({ ...formData, referralNumber: e.target.value })}
+                        className="w-full px-4 py-3 rounded-2xl bg-white border border-[#9E3371] text-sm text-[#9E3371] placeholder-[#9E3371]/60 focus:outline-none"
+                      />
+                    </div>
+                  </div>
+
                   <div>
                     <label className="block text-xs font-bold text-[#9E3371] mb-1.5">Counseling Topic</label>
                     <select
@@ -164,10 +283,11 @@ export const CareerCounsellingPage: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 px-6 rounded-2xl text-center text-sm font-bold text-white bg-[#9E3371] shadow-lg flex items-center justify-center gap-2 hover:bg-[#862B5F] transition-all border border-white cursor-pointer"
+                    disabled={loading}
+                    className="w-full py-3.5 px-6 rounded-2xl text-center text-sm font-bold text-white bg-[#9E3371] shadow-lg flex items-center justify-center gap-2 hover:bg-[#862B5F] transition-all border border-white cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    <span>Submit Counseling Enquiry</span>
-                    <Send className="w-4 h-4 text-white" />
+                    <span>{loading ? 'Submitting...' : 'Submit Counseling Enquiry'}</span>
+                    {loading ? <Loader2 className="w-4 h-4 text-white animate-spin" /> : <Send className="w-4 h-4 text-white" />}
                   </button>
                 </form>
               )}
@@ -229,4 +349,3 @@ export const CareerCounsellingPage: React.FC = () => {
 };
 
 export default CareerCounsellingPage;
-
