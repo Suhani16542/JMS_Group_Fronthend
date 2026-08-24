@@ -18,7 +18,8 @@ import ContactPage from '@/pages/contact/ContactPage';
 import TeamPage from '@/pages/team/TeamPage';
 import CareersPage from '@/pages/careers/CareersPage';
 import FaqPage from '@/pages/faq/FaqPage';
-import { PrivacyPolicyPage, TermsPage, DisclaimerPage, CookiePolicyPage } from '@/pages/legal/LegalPages';
+import { TermsPage } from '@/pages/legal/TermsPage';
+import { PrivacyPolicyPage, DisclaimerPage, CookiePolicyPage } from '@/pages/legal/LegalPages';
 
 import AdminDashboardPage from '@/pages/admin/AdminDashboardPage';
 

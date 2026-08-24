@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#FAF8FB] text-[#222222] pt-16 pb-8 border-t-2 border-[#8B1E5C]/20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-        
+
         {/* Newsletter / Stay Connected Strip */}
         {!hideNewsletter && (
           <div className="mb-14 p-8 sm:p-10 rounded-[18px] bg-white border border-[#8B1E5C]/20 shadow-xl relative overflow-hidden">
@@ -43,14 +43,14 @@ export const Footer: React.FC = () => {
 
         {/* Main Footer Columns Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-[#8B1E5C]/15">
-          
+
           {/* Column 1: Official Logo & Company Intro */}
           <div className="lg:col-span-4 flex flex-col items-start">
             {/* Clean White Container for Footer Logo */}
             <div className="bg-white p-4 sm:p-5 rounded-[18px] shadow-sm border border-[#8B1E5C]/15 mb-5 inline-flex items-center justify-center">
               <Logo />
             </div>
-            
+
             <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-5 max-w-sm">
               JMS Group is a premier corporate placement, HR consulting, career counseling and executive recruitment organization. Growing Your Self with JMS Group.
             </p>
