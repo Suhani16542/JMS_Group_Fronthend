@@ -22,6 +22,8 @@ import { TermsPage } from '@/pages/legal/TermsPage';
 import { PrivacyPolicyPage, DisclaimerPage, CookiePolicyPage } from '@/pages/legal/LegalPages';
 
 import AdminDashboardPage from '@/pages/admin/AdminDashboardPage';
+import AdminLoginPage from '@/pages/admin/AdminLoginPage';
+import AdminProtectedRoute from '@/routes/AdminProtectedRoute';
 
 export const AppRoutes: React.FC = () => {
   return (
@@ -60,9 +62,15 @@ export const AppRoutes: React.FC = () => {
         <Route path="/cookie-policy" element={<CookiePolicyPage />} />
       </Route>
 
-      {/* Admin Routes */}
-      <Route path="/admin" element={<AdminLayout />}>
-        <Route index element={<AdminDashboardPage />} />
+      {/* Admin Login Route (Dedicated Auth Screen) */}
+      <Route path="/admin/login" element={<AdminLoginPage />} />
+
+      {/* Protected Admin Routes */}
+      <Route element={<AdminProtectedRoute />}>
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Navigate to="/admin/dashboard" replace />} />
+          <Route path="dashboard" element={<AdminDashboardPage />} />
+        </Route>
       </Route>
 
       {/* Fallback */}
