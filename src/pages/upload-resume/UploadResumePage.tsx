@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Upload, CheckCircle2, Send, FileText, User, Mail, Phone, MapPin, Briefcase, Loader2, AlertCircle, Hash } from 'lucide-react';
+import {
+  Upload,
+  CheckCircle2,
+  Send,
+  FileText,
+  User,
+  Mail,
+  Phone,
+  Briefcase,
+  Loader2,
+  AlertCircle,
+} from 'lucide-react';
 import { uploadResumeApi } from '../../services/resumeService';
 
 export const UploadResumePage: React.FC = () => {
@@ -14,10 +24,10 @@ export const UploadResumePage: React.FC = () => {
     qualification: '',
     experience: '',
     preferredRole: '',
-    preferredLocation: '',
   });
-  const [submitted, setSubmitted] = useState(false);
+
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [validationError, setValidationError] = useState<string | null>(null);
 
@@ -62,12 +72,12 @@ export const UploadResumePage: React.FC = () => {
       setValidationError('Phone Number is required.');
       return;
     }
-    if (!formData.referenceNumber.trim()) {
-      setValidationError('Reference Number is required.');
-      return;
-    }
     if (!formData.referenceName.trim()) {
       setValidationError('Reference Name is required.');
+      return;
+    }
+    if (!formData.referenceNumber.trim()) {
+      setValidationError('Reference Number is required.');
       return;
     }
     if (!formData.qualification.trim()) {
@@ -107,23 +117,28 @@ export const UploadResumePage: React.FC = () => {
       });
 
       setSubmitted(true);
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        referenceNumber: '',
-        referenceName: '',
-        qualification: '',
-        experience: '',
-        preferredRole: '',
-        preferredLocation: '',
-      });
-      setFile(null);
     } catch (err: any) {
       setErrorMessage(err.message || 'Something went wrong while submitting your resume.');
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleReset = () => {
+    setSubmitted(false);
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      referenceNumber: '',
+      referenceName: '',
+      qualification: '',
+      experience: '',
+      preferredRole: '',
+    });
+    setFile(null);
+    setErrorMessage(null);
+    setValidationError(null);
   };
 
   return (
@@ -145,24 +160,31 @@ export const UploadResumePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Upload Form */}
+      {/* Main Upload Form / Clean Success Screen */}
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white p-8 sm:p-12 rounded-3xl border border-[#9E3371] shadow-xl">
             
             {submitted ? (
-              <div className="p-8 rounded-2xl bg-[#9E3371] text-white text-center">
-                <CheckCircle2 className="w-12 h-12 mx-auto mb-4 text-white" />
-                <h3 className="text-2xl font-bold mb-2 text-white">Resume Submitted Successfully!</h3>
-                <p className="text-sm text-white mb-6">
-                  Thank you! Our recruitment team has received your profile and saved your resume. We will contact you when suitable openings arise.
+              <div className="p-8 sm:p-12 rounded-2xl bg-[#9E3371] text-white text-center space-y-4 shadow-xl">
+                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto shadow-inner">
+                  <CheckCircle2 className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-black text-white">
+                  Resume Submitted Successfully!
+                </h3>
+                <p className="text-sm sm:text-base text-white/95 max-w-xl mx-auto font-medium leading-relaxed">
+                  Thank you for submitting your resume. Our team will review your application and contact you if there is a suitable opportunity.
                 </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="px-6 py-2.5 rounded-xl bg-white text-[#9E3371] font-bold text-xs hover:bg-gray-100 transition-colors"
-                >
-                  Submit Another Resume
-                </button>
+                <div className="pt-4">
+                  <button
+                    type="button"
+                    onClick={handleReset}
+                    className="px-6 py-2.5 rounded-full bg-white text-[#9E3371] font-bold text-xs hover:bg-[#FAF8FB] transition-all cursor-pointer shadow-md"
+                  >
+                    Submit Another Resume
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -258,9 +280,10 @@ export const UploadResumePage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#9E3371] mb-2">Highest Qualification</label>
+                    <label className="block text-xs font-bold text-[#9E3371] mb-2">Highest Qualification *</label>
                     <input
                       type="text"
+                      required
                       placeholder="e.g. B.Tech / MBA / MCA"
                       value={formData.qualification}
                       onChange={(e) => setFormData({ ...formData, qualification: e.target.value })}
@@ -269,8 +292,9 @@ export const UploadResumePage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#9E3371] mb-2">Years of Experience</label>
+                    <label className="block text-xs font-bold text-[#9E3371] mb-2">Years of Experience *</label>
                     <select
+                      required
                       value={formData.experience}
                       onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
                       className="w-full px-4 py-3 rounded-2xl bg-white border border-[#9E3371] text-sm text-[#9E3371] focus:outline-none cursor-pointer"
@@ -285,11 +309,12 @@ export const UploadResumePage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#9E3371] mb-2">Preferred Job Role</label>
+                    <label className="block text-xs font-bold text-[#9E3371] mb-2">Preferred Job Role *</label>
                     <div className="relative">
                       <Briefcase className="w-4 h-4 text-[#9E3371] absolute left-4 top-1/2 -translate-y-1/2" />
                       <input
                         type="text"
+                        required
                         placeholder="e.g. Full Stack Developer / HR Manager"
                         value={formData.preferredRole}
                         onChange={(e) => setFormData({ ...formData, preferredRole: e.target.value })}
@@ -354,5 +379,3 @@ export const UploadResumePage: React.FC = () => {
 };
 
 export default UploadResumePage;
-
-

@@ -10,12 +10,47 @@ export interface ResumePayload {
   resume: File;
 }
 
+export interface ResumeUploadResponseData {
+  _id: string;
+  resumeId?: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  highestQualification?: string;
+  experience?: string;
+  preferredJobRole?: string;
+  referenceNumber?: string;
+  referenceName?: string;
+  resumeUrl?: string;
+  viewUrl?: string;
+  downloadUrl?: string;
+  whatsappUrl?: string;
+  whatsappLink?: string;
+  deepLink?: string;
+  status?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  [key: string]: any;
+}
+
+export interface ResumeUploadResponse {
+  success: boolean;
+  message: string;
+  data: ResumeUploadResponseData;
+  whatsappUrl?: string;
+  deepLink?: string;
+  [key: string]: any;
+}
+
 const getApiUrl = (): string => {
   const envUrl = import.meta.env.VITE_API_BASE_URL || import.meta.env.NEXT_PUBLIC_API_URL;
-  return envUrl || 'https://jms-group-backend.onrender.com';
+  if (envUrl) {
+    return envUrl.replace(/\/+$/, '');
+  }
+  return import.meta.env.DEV ? 'http://localhost:5000' : 'https://jms-group-backend.onrender.com';
 };
 
-export const uploadResumeApi = async (payload: ResumePayload) => {
+export const uploadResumeApi = async (payload: ResumePayload): Promise<ResumeUploadResponse> => {
   const baseUrl = getApiUrl();
   const formData = new FormData();
 
@@ -43,7 +78,13 @@ export const uploadResumeApi = async (payload: ResumePayload) => {
   const responseData = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    throw new Error(responseData.message || responseData.error || 'Failed to upload resume. Please try again.');
+    let errorMsg = responseData.message || responseData.error;
+    if (Array.isArray(responseData.errors) && responseData.errors.length > 0) {
+      errorMsg = responseData.errors
+        .map((err: any) => (typeof err === 'string' ? err : err.msg || err.message || JSON.stringify(err)))
+        .join(' ');
+    }
+    throw new Error(errorMsg || 'Failed to upload resume. Please try again.');
   }
 
   return responseData;

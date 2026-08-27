@@ -16,6 +16,7 @@ export interface CandidateApplicationPayload {
   noticePeriod?: string;
   currentBankOrNbfc?: string;
   currentVertical?: string;
+  currentCompany?: string;
   fatherOrHusbandOccupation?: string;
   motherOccupation?: string;
   siblings?: string;
@@ -25,9 +26,46 @@ export interface CandidateApplicationPayload {
   fatherNumber?: string;
   referenceNameAndNo?: string;
   candidateSignatureName?: string;
-  termsAccepted?: boolean | string;
-  photo?: File | null;
+  signature: string; // Base64 data URL from SignaturePad
+  termsAccepted: boolean | string;
+  resumeId?: string;
   documents?: File[];
+  photo?: File | null;
+  [key: string]: any;
+}
+
+export interface CandidateApplicationResponseData {
+  _id: string;
+  applicationId?: string;
+  fullName: string;
+  fatherOrHusbandName: string;
+  dob: string;
+  qualification: string;
+  specialization?: string;
+  permanentAddress: string;
+  email: string;
+  mobileNumber: string;
+  jobAppliedForA: string;
+  jobAppliedForB?: string;
+  currentLocation: string;
+  locationPreferenceA: string;
+  locationPreferenceB?: string;
+  resumeId?: string;
+  resumeUrl?: string;
+  signature?: string;
+  signatureUrl?: string;
+  candidateSignatureName?: string;
+  termsAccepted: boolean;
+  status?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  [key: string]: any;
+}
+
+export interface CandidateApplicationResponse {
+  success: boolean;
+  message: string;
+  data: CandidateApplicationResponseData;
   [key: string]: any;
 }
 
@@ -41,47 +79,58 @@ const getApiUrl = (): string => {
 
 /**
  * Submits the Candidate Application form to the backend.
- * Handles FormData directly or constructs multipart/form-data from payload, photo, and documents.
+ * Handles FormData directly or constructs JSON / multipart/form-data.
  */
 export const submitCandidateApplicationApi = async (
   formDataOrPayload: FormData | CandidateApplicationPayload | Record<string, any>,
   photo?: File | null,
   documents?: File[]
-) => {
+): Promise<CandidateApplicationResponse> => {
   const baseUrl = getApiUrl();
-  let bodyData: FormData;
+  let bodyData: BodyInit;
+  let headers: HeadersInit = {};
 
   if (formDataOrPayload instanceof FormData) {
     bodyData = formDataOrPayload;
   } else {
-    bodyData = new FormData();
-    
-    Object.entries(formDataOrPayload).forEach(([key, value]) => {
-      if (value !== undefined && value !== null && key !== 'photo' && key !== 'documents') {
-        bodyData.append(key, typeof value === 'boolean' ? String(value) : (value as any));
-      }
-    });
+    const hasFiles = (documents && documents.length > 0) ||
+      (Array.isArray(formDataOrPayload.documents) && formDataOrPayload.documents.length > 0) ||
+      photo instanceof File ||
+      (formDataOrPayload as any).photo instanceof File;
 
-    const candidatePhoto = photo || (formDataOrPayload as any).photo;
-    if (candidatePhoto instanceof File) {
-      bodyData.append('photo', candidatePhoto);
-    }
-
-    const docList = documents || (formDataOrPayload as any).documents;
-    if (Array.isArray(docList)) {
-      docList.forEach((doc) => {
-        if (doc instanceof File) {
-          bodyData.append('documents', doc);
+    if (hasFiles) {
+      const formData = new FormData();
+      Object.entries(formDataOrPayload).forEach(([key, value]) => {
+        if (value !== undefined && value !== null && key !== 'photo' && key !== 'documents') {
+          formData.append(key, typeof value === 'boolean' ? String(value) : (value as any));
         }
       });
+
+      const docList = documents || (formDataOrPayload as any).documents;
+      if (Array.isArray(docList)) {
+        docList.forEach((doc) => {
+          if (doc instanceof File) {
+            formData.append('documents', doc);
+          }
+        });
+      }
+
+      bodyData = formData;
+    } else {
+      // Clean JSON payload
+      headers = { 'Content-Type': 'application/json' };
+      const jsonPayload = { ...formDataOrPayload };
+      delete jsonPayload.photo;
+      delete jsonPayload.documents;
+      bodyData = JSON.stringify(jsonPayload);
     }
   }
 
   try {
     const response = await fetch(`${baseUrl}/api/applications`, {
       method: 'POST',
+      headers,
       body: bodyData,
-      // Note: Do NOT manually set 'Content-Type' header so browser adds multipart boundary automatically
     });
 
     const responseData = await response.json().catch(() => ({}));

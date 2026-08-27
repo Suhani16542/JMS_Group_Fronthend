@@ -52,6 +52,10 @@ export const AppRoutes: React.FC = () => {
 
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-conditions" element={<TermsPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/candidate-application" element={<Navigate to="/upload-resume" replace />} />
+        <Route path="/application" element={<Navigate to="/upload-resume" replace />} />
+        <Route path="/apply" element={<Navigate to="/upload-resume" replace />} />
         <Route path="/disclaimer" element={<DisclaimerPage />} />
         <Route path="/cookie-policy" element={<CookiePolicyPage />} />
       </Route>
