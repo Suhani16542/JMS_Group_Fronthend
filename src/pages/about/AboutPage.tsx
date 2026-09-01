@@ -53,12 +53,6 @@ export const AboutPage: React.FC = () => {
     { title: 'Personalized Career Counseling', desc: 'One-on-one resume reviews, mock interviews, and salary negotiation support.' },
   ];
 
-  const faqs = [
-    { q: 'What makes JMS Group different from traditional staffing agencies?', a: 'JMS Group combines 15+ years of recruitment expertise with 1-on-1 candidate counseling and specialized HR consulting frameworks tailored for corporate client growth.' },
-    { q: 'How long does the candidate placement process take?', a: 'For corporate clients, pre-screened shortlists are presented within 48 to 72 hours. Candidate placements typically complete within 10 to 14 business days.' },
-    { q: 'Does JMS Group charge candidates for job placement services?', a: 'No, our placement services are completely free for candidates. We never charge registration fees, interview guidance fees, or placement commissions.' },
-  ];
-
   return (
     <div className="w-full bg-white">
       {/* Hero Banner Header */}
@@ -290,23 +284,6 @@ export const AboutPage: React.FC = () => {
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-white border-t border-[#9E3371]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-extrabold text-[#9E3371]">About Us FAQs</h2>
-          </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="p-6 rounded-3xl bg-white border border-[#9E3371] shadow-sm">
-                <h4 className="text-base font-bold text-[#9E3371] mb-2">{faq.q}</h4>
-                <p className="text-xs text-[#9E3371] leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
