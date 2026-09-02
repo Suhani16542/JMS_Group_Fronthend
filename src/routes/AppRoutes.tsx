@@ -21,7 +21,11 @@ import FaqPage from '@/pages/faq/FaqPage';
 import { TermsPage } from '@/pages/legal/TermsPage';
 import { PrivacyPolicyPage, DisclaimerPage, CookiePolicyPage } from '@/pages/legal/LegalPages';
 
-import AdminDashboardPage from '@/pages/admin/AdminDashboardPage';
+import AdminDashboardOverviewPage from '@/pages/admin/AdminDashboardOverviewPage';
+import AdminCandidatesPage from '@/pages/admin/AdminCandidatesPage';
+import AdminContactsPage from '@/pages/admin/AdminContactsPage';
+import AdminJobOpeningsPage from '@/pages/admin/AdminJobOpeningsPage';
+import AdminResumesPage from '@/pages/admin/AdminResumesPage';
 import AdminLoginPage from '@/pages/admin/AdminLoginPage';
 import AdminProtectedRoute from '@/routes/AdminProtectedRoute';
 
@@ -69,7 +73,12 @@ export const AppRoutes: React.FC = () => {
       <Route element={<AdminProtectedRoute />}>
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Navigate to="/admin/dashboard" replace />} />
-          <Route path="dashboard" element={<AdminDashboardPage />} />
+          <Route path="dashboard" element={<AdminDashboardOverviewPage />} />
+          <Route path="candidates" element={<AdminCandidatesPage />} />
+          <Route path="contacts" element={<AdminContactsPage />} />
+          <Route path="job-openings" element={<AdminJobOpeningsPage />} />
+          <Route path="jobs" element={<Navigate to="/admin/job-openings" replace />} />
+          <Route path="resumes" element={<AdminResumesPage />} />
         </Route>
       </Route>
 
